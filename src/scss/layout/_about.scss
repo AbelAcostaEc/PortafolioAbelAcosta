@@ -1,0 +1,78 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.acercaDe {
+  @include m.telefono {
+    @include m.grid(2, 1rem);
+  }
+  .imgAcerca {
+    margin: 10rem auto 2rem;
+    max-width: 80%;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 2px 3px 5px #ccc, -3px -3px 3px #ccc;
+    @include m.telefono {
+      margin: 10rem auto;
+      max-width: 40%;
+    }
+  }
+
+  .informacion {
+    padding: 2rem;
+    @include m.telefono {
+      padding: 0;
+    }
+    .titulo {
+      padding: 0;
+      @include m.telefono {
+        padding: 5rem 0 1rem 0;
+      }
+      h2 {
+        text-align: left;
+        font-size: 2em;
+      }
+      hr {
+        margin-left: 0.1rem;
+        width: 15%;
+        height: 0.2rem;
+        border: none;
+        background-color: v.$primario;
+        @include m.telefono {
+          width: 5%;
+        }
+      }
+    }
+    .descripcion {
+      p {
+        color: gray;
+        font-size: 1.5rem;
+        padding: 1.5rem 0;
+      }
+    }
+    .redes {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      @include m.telefono {
+        justify-content: start;
+      }
+      .icono {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2rem;
+        height: 2rem;
+        padding: 2.5rem;
+        border-radius: 50%;
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+        border: none;
+        &:hover {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@use "variables" as v;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&display=swap");
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  transition: 0.2s ease-in-out;
+}
+body {
+  font-family: v.$fuente_principal;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  background-color: v.$fondoClaro;
+}
+p {
+  font-size: 2rem;
+}
+.contenedor {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+img,
+picture {
+  width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: v.$fuente_principal;
+  text-align: center;
+}

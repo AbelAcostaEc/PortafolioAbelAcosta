@@ -1,0 +1,38 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.hero {
+  height: 80vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../img/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .titulo {
+    font-family: v.$fuente_secundaria;
+    font-weight: bolder;
+    font-size: 2rem;
+    color: v.$primario;
+    h1 {
+      padding: 0;
+      margin: 0;
+    }
+    @include m.telefono {
+      font-size: 4rem;
+    }
+  }
+  .name {
+    text-align: center;
+    color: #fff;
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,47 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: v.$fondoClaro;
+  .logo {
+    width: 30%;
+    picture {
+      @include m.telefono {
+        max-width: 20%;
+      }
+    }
+  }
+
+  .menu {
+    width: 50%;
+    display: none;
+    @include m.telefono {
+      display: block;
+    }
+    ul {
+      display: flex;
+
+      .item {
+        text-decoration: none;
+        color: v.$gris;
+        font-weight: 700;
+        font-size: 18px;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid transparent;
+        &:hover {
+          color: v.$primario;
+          border-bottom: 1px solid v.$primario;
+        }
+      }
+    }
+  }
+
+  .menuMovil {
+    @include m.telefono {
+      display: none;
+    }
+  }
+}
