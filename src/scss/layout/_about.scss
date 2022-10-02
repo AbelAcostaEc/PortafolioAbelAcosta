@@ -76,6 +76,9 @@
     }
     .descargar {
       padding: 2rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       .btnDescargar {
         display: inline-block;
         text-decoration: none;
