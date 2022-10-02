@@ -30,6 +30,9 @@
   .formulario {
     width: 80%;
     margin: 0 auto;
+    @include m.telefono {
+      width: 50%;
+    }
     .field {
       label {
         display: block;
@@ -54,17 +57,20 @@
         border: 1px solid #ccc;
         outline: none;
         resize: none;
+        @include m.telefono {
+          width: 90%;
+        }
       }
     }
     .datos {
       @include m.telefono {
-        @include m.grid(3, 1rem);
+        @include m.grid(2, 1rem);
       }
     }
     .mensaje {
       #correo {
         @include m.telefono {
-          width: 60%;
+          width: 90%;
         }
       }
     }

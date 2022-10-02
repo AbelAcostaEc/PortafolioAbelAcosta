@@ -74,5 +74,20 @@
         }
       }
     }
+    .descargar {
+      padding: 2rem 0;
+      .btnDescargar {
+        display: inline-block;
+        text-decoration: none;
+        background: v.$primario;
+        color: #fff;
+        padding: 2rem;
+        border-radius: 2rem;
+        &:hover {
+          cursor: pointer;
+          background-color: v.$fondoOscuro;
+        }
+      }
+    }
   }
 }
