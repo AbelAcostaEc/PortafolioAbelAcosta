@@ -38,10 +38,13 @@
         }
       }
       input {
-        width: 80%;
+        width: 100%;
         border: 1px solid #ccc;
         padding: 1rem;
         outline: none;
+        @include m.telefono {
+          width: 80%;
+        }
         // &:target {
         //   border-color: rgb(255, 0, 0);
         // }
@@ -54,11 +57,15 @@
       }
     }
     .datos {
-      @include m.grid(3, 1rem);
+      @include m.telefono {
+        @include m.grid(3, 1rem);
+      }
     }
     .mensaje {
       #correo {
-        width: 60%;
+        @include m.telefono {
+          width: 60%;
+        }
       }
     }
     .btnForm {
@@ -72,6 +79,11 @@
         color: #fff;
         padding: 1.5rem;
         border-radius: 1rem;
+        &:hover {
+          cursor: pointer;
+          color: #000;
+          background: v.$primario;
+        }
       }
     }
   }

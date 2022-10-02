@@ -3,9 +3,13 @@
 
 .navbar {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   background: v.$fondoClaro;
+  @include m.telefono {
+    flex-direction: row;
+  }
   .logo {
     width: 30%;
     picture {
@@ -15,14 +19,21 @@
     }
   }
 
+  .aparecer {
+    display: block !important;
+  }
   .menu {
-    width: 50%;
     display: none;
     @include m.telefono {
       display: block;
     }
     ul {
       display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      @include m.telefono {
+        flex-direction: row;
+      }
 
       .item {
         text-decoration: none;

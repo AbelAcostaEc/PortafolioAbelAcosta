@@ -23,3 +23,10 @@ const typed = new Typed(".typed", {
   cursorChar: "|", // Caracter para el cursor
   contentType: "html", // 'html' o 'null' para texto sin formato
 });
+
+const btnMovil = document.querySelector(".menuMovil");
+const menu = document.querySelector(".menu");
+
+btnMovil.addEventListener("click", () => {
+  menu.classList.toggle("aparecer");
+});

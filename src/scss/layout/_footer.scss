@@ -5,19 +5,10 @@
   text-align: center;
   color: #fff;
   background: v.$fondoOscuro;
+  p {
+    margin: 2rem 0 0 0;
+  }
   span {
     font-weight: 400;
   }
-}
-
-.ir-arriba {
-  display: none;
-  padding: 20px;
-  background: #024959;
-  font-size: 20px;
-  color: #fff;
-  cursor: pointer;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
 }
