@@ -35,4 +35,29 @@
     color: #fff;
     font-size: 2.5rem;
   }
+  .bajar {
+    position: absolute;
+    color: #fff;
+    bottom: 10rem;
+    font-size: 5rem;
+    animation: btnBajar infinite 2s 1s;
+    @include m.telefono {
+      bottom: 6rem;
+    }
+  }
+}
+
+// ANIMACION
+@keyframes btnBajar {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+    scale: 0.6;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
 }
