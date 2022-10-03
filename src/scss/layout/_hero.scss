@@ -36,12 +36,15 @@
     font-size: 2.5rem;
   }
   .bajar {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     color: #fff;
-    bottom: 10rem;
-    font-size: 5rem;
-    animation: btnBajar infinite 2s 1s;
+    top: 30%;
+    font-size: 3rem;
+    animation: btnBajar infinite 2s;
     @include m.telefono {
+      top: auto;
       bottom: 6rem;
     }
   }
@@ -52,12 +55,20 @@
   0% {
     opacity: 1;
   }
+  25% {
+    transform: translateY(1rem);
+  }
   50% {
     opacity: 0.2;
     scale: 0.6;
+    transform: translateY(2rem);
+  }
+  75% {
+    transform: translateY(-1.5rem);
   }
   100% {
     opacity: 1;
     scale: 1;
+    transform: translateY(-2rem);
   }
 }
