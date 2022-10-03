@@ -38,12 +38,13 @@
   .bajar {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: sticky;
     color: #fff;
     top: 30%;
     font-size: 3rem;
     animation: btnBajar infinite 2s;
     @include m.telefono {
+      position: absolute;
       top: auto;
       bottom: 6rem;
     }
