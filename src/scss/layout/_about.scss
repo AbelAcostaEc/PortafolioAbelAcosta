@@ -79,6 +79,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      @include m.telefono {
+        justify-content: start;
+      }
       .btnDescargar {
         display: inline-block;
         text-decoration: none;
