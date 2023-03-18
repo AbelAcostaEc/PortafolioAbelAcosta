@@ -56,7 +56,7 @@ Route::prefix('inventory')->group(function() {
 
 ### Template Basic Livewire
 
-`view/template/master.blade.php`
+`view/layouts/master.blade.php`
 
 ```sh
 <!DOCTYPE html>
@@ -65,12 +65,16 @@ Route::prefix('inventory')->group(function() {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield('title')</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
         @livewireStyles
     </head>
     <body>
+        <div class="container mt-4">
             @yield('content')
+        </div>
 
         @livewireScripts
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
     </body>
 </html>
 ```
