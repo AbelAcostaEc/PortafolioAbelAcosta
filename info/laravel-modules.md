@@ -2,7 +2,7 @@ laravel-modules# Laravel-Modules
 
 ## Create project laravel
 
-1.1- `composer create-project laravel/laravel your-project-name 4.2`
+1.1- ```bash composer create-project laravel/laravel your-project-name 4.2 ```
 
 ## Install laravel-modules
 
@@ -12,7 +12,7 @@ laravel-modules# Laravel-Modules
 
 2.3 In `Composer.json` add line "Modules"
 
-```sh
+```bash
 {
 "autoload": {
         "psr-4": {
