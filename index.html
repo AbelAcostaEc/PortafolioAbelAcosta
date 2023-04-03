@@ -2,375 +2,229 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abel Acosta</title>
 
     <!-- ETIQUETAS META -->
     <meta name="author" content="Abel Acosta" />
-    <meta name="copyright" content="&copy ASAA 2022. Derechos reservados" />
+    <meta name="copyright" content="&copy ASAA 2023." />
     <meta name="email" content="abel.2833@hotmail.com" />
-    <meta name="description" content="Creador de Sitios Wep developer" />
-    <meta name="keywords" content="Web, Pagina, asaa, Abel Acosta" />
+    <meta
+      name="description"
+      content="Portafolio de desarrollo web de Abel Acosta, con experiencia en HTML, CSS, JavaScript, y otras tecnologías web."
+    />
+    <meta
+      name="keywords"
+      content="desarrollador web, HTML, CSS, JavaScript, experiencia, portafolio"
+    />
+
+    <!-- RESPONSIVIDAD -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=0"
+    />
 
     <!-- SOCIAL CARDS FACEBOOK Y TWITTER-->
-    <meta name="og:url" content="www.facebook.com" />
-    <meta name="og:type" content="Abel Acosta developer" />
-    <meta name="og:title" content="ASAA" />
-    <meta name="og:description" content="Web, Pagina, asaa, Abel Acosta" />
-    <meta name="og:image" content="build/img/Abel Acosta Logo.png" />
+    <meta
+      property="og:title"
+      content="Portafolio de Desarrollo Web - Abel Acosta"
+    />
+    <meta
+      property="og:description"
+      content="Soy un programador recién graduado con conocimientos en HTML, CSS, JS, PHP, Java, Laravel y Livewire. Me encanta crear proyectos web innovadores y mejorar mis habilidades de programación."
+    />
+
+    <meta
+      property="og:image"
+      content="https://abelacostaportafolio.js.org/img/logo-Acosta.png"
+    />
+    <meta property="og:url" content="https://abelacostaportafolio.js.org/" />
+    <meta property="og:type" content="website" />
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="build/css/app.css" />
+    <link rel="stylesheet" href="build/css/style.css" />
 
     <!-- Favicon -->
     <link
       rel="shortcut icon"
-      href="build/img/Abel-Acosta-Logo.ico"
+      href="build/img/logo-Acosta.ico"
       type="image/x-icon"
     />
-    <link
-      rel="icon"
-      href="build/img/Abel-Acosta-Logo.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="build/img/logo-Acosta.ico" type="image/x-icon" />
+
+    <!-- Font Avesome CDN -->
+    <!--   <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    /> -->
   </head>
 
   <body>
-    <!-- Loader -->
-    <div class="contenedor-loader">
+    <div class="container-loader">
       <div class="loader"></div>
     </div>
-    <!-- Fin Loader -->
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">
+          <img src="build/img/logo-Acosta.png" alt="Logo Abel Acosta (ASAA)" />
+        </div>
 
-    <!-- HEADER -->
-    <header class="navbar">
-      <div class="logo">
-        <picture>
-          <source srcset="build/img/Abel Acosta Logo.avif" type="image/avif" />
-          <source srcset="build/img/Abel Acosta Logo.webp" type="image/webp" />
-          <img
-            loading="lazy"
-            src="build/img/Abel Acosta Logo.png"
-            alt="imagen Abel Acosta"
-          />
-        </picture>
-      </div>
-      <div class="menuMovil">
-        <i class="fa-solid fa-2x fa-bars"></i>
-      </div>
-      <div class="menu">
-        <ul>
-          <a href="#acercaDe" class="item">
-            <li>Acerca de Mi</li>
+        <div class="mobile-menu">
+          <a id="btn-mobile-menu">
+            <i class="fa fa-bars"></i>
           </a>
-          <a href="#conocimientos" class="item">
-            <li>Conocimientos</li>
-          </a>
-          <a href="#portafolio" class="item">
-            <li>Portafolio</li>
-          </a>
-          <a href="#contacto" class="item">
-            <li>Contacto</li>
-          </a>
+        </div>
+
+        <ul class="menu">
+          <a href="#home"><li>Incio</li></a>
+          <a href="#about"><li>Sobre Mi</li></a>
+          <a href="#portfolio"><li>Portafolio</li></a>
+          <a href="#contact"><li>Contáctame</li></a>
         </ul>
+      </nav>
+
+      <div class="resume">
+        <div class="description">
+          <p>Hola, Mi nombre es:</p>
+          <h1>Abel Acosta</h1>
+          <p>Soy <span id="typewriter"></span></p>
+        </div>
+        <div class="img">
+          <img src="build/img/img-abel.png" alt="Abel Acosta foto" />
+        </div>
       </div>
     </header>
-    <div class="hero">
-      <div class="bajar">
-        <i class="fa-solid fa-chevron-down"></i>
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-      <div class="titulo">
-        <h1>Soy <span class="typed"></span></h1>
-      </div>
-      <p class="name">Abel Acosta</p>
-    </div>
 
-    <div class="acercaDe" id="acercaDe">
-      <div class="imgAcerca">
-        <picture
-          ><source srcset="build/img/AbelFoto.avif" type="image/avif" />
-          <source srcset="build/img/AbelFoto.webp" type="image/webp" />
-          <img
-            loading="lazy"
-            src="build/img/AbelFoto.jpg"
-            alt="imagen Abel Acosta"
-          />
-        </picture>
+    <section id="about">
+      <div class="about-tabs container">
+        <a href="#about-info" class="tab bg-sky-blue active">
+          <i class="fa fa-user icon-tab"></i>
+          <span class="text-tab">Sobre Mi</span>
+        </a>
+        <a href="#skills" class="tab bg-yellow">
+          <i class="fa fa-graduation-cap icon-tab"></i>
+          <span class="text-tab">Conocimientos</span>
+        </a>
+        <a href="#services" class="tab bg-green">
+          <i class="fa fa-desktop icon-tab"></i>
+          <span class="text-tab">Servicios</span>
+        </a>
       </div>
-      <div class="informacion">
-        <div class="titulo">
-          <h2>Acerca de Mi</h2>
-          <hr />
+      <div class="about-container">
+        <div id="about-info" class="about-section bg-sky-blue active-section">
+          <h3>Sobre Mí</h3>
+          <br />
+          <div class="description">
+            <p>
+              ¡Hola! Me llamo Abel Acosta y soy un desarrollador joven y
+              apasionado con experiencia en tecnologías web, Me gradué en
+              tecnología en sistemas y tengo 25 años. <br />
+              Tengo Concocimientos en HTML, CSS, JS, PHP, Wordpress y también
+              tengo experiencia en frameworks populares como Bootstrap, Laravel
+              y Livewire. <br />
+              Con una experiencia de dos meses en el desarrollo de sistemas, he
+              tenido la oportunidad de aplicar mis conocimientos y habilidades
+              en proyectos reales. Me encantaría ayudarte a crear una solución
+              digital para tu negocio o proyecto, ¡no dudes en contactarme!
+            </p>
+            <div class="image">
+              <img
+                src="build/img/developer.svg"
+                alt="Imagen desarrollador Web"
+              />
+            </div>
+          </div>
         </div>
-        <div class="descripcion">
+        <div id="skills" class="about-section bg-yellow">
+          <h3>Mis Conocimientos</h3>
+          <br />
           <p>
-            Soy tecnólogo en Análisis de Sistemas graduado en el Instituto
-            Tecnológico Quito, Me apasiona el diseño web y me encantaria
-            especializarme en FrontEnd por tal motivo realizo cursos que me
-            premitan mejorar mis competencias. <br />
-            A lo largo de mi carrera he realizado diversos proyectos los cuales
-            me permiten manejar los siguientes lenguajes de programacion como
-            Java, C#, PHP,Visual Basic,Javascript al igual tecnologias y
-            frameworks como Bootstrap, Angular, Wordpress, SASS.
+            Soy habilidoso en tecnologías web como HTML, CSS, JavaScript, PHP,
+            WordPress, Laravel, Livewire y Angular. He desarrollado soluciones
+            digitales efectivas para empresas y proyectos diversos, garantizando
+            una excelente experiencia para los usuarios finales.
           </p>
+          <div class="icons">
+            <i class="fa fa-html5"></i>
+            <i class="fa fa-css3"></i>
+            <i class="fab fa-js"></i>
+            <i class="fa fa-wordpress"></i>
+            <i class="fab fa-github"></i>
+            <i class="fab fa-php"></i>
+          </div>
         </div>
-        <div class="redes">
-          <a
-            href="https://www.facebook.com/people/ASAA-Soluciones-Informáticas/100086119248028/?sk=about"
-            class="icono"
-            style="background-color: #3b5998"
-            target="_blank"
-            ><i class="fa-brands fa-facebook-f"></i
-          ></a>
-          <a
-            href="http://wa.link/yvnz8v"
-            class="icono"
-            style="background-color: #25d366"
-            target="_blank"
-            ><i class="fa-brands fa-whatsapp"></i
-          ></a>
-          <a
-            href="https://github.com/ASAA19971a"
-            class="icono"
-            style="background-color: #343434"
-            target="_blank"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-          <a
-            href="http://www.linkedin.com/in/abel-acosta-asaa"
-            class="icono"
-            style="background-color: #0077b5"
-            target="_blank"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-        </div>
-        <div class="descargar">
-          <a
-            href="build/download/ABEL ACOSTA CV.pdf"
-            download="Abel Acosta"
-            target="_blank"
-            class="btnDescargar"
-            >Descargar CV</a
-          >
+        <div id="services" class="about-section bg-green">
+          <h3>Servicios</h3>
+          <br />
+          <div class="services-container">
+            <div class="service">
+              <i class="fa-5x fas fa-code"></i>
+              <p class="title">Desarrollo web</p>
+              <p class="description">
+                Desarrollo de sitios web con diseños personalizados, adaptados a
+                las necesidades de cada cliente y optimizados para la mejor
+                experiencia del usuario.
+              </p>
+            </div>
+            <div class="service">
+              <i class="fa-5x fas fa-mobile"></i>
+              <p class="title">Desarrollo de aplicaciones</p>
+              <p class="description">
+                Diseño y desarrollo de aplicaciones móviles y de escritorio para
+                diferentes sistemas operativos. Puedo ayudarte a crear una
+                aplicación que sea fácil de usar y atractiva para tus usuarios.
+              </p>
+            </div>
+            <div class="service">
+              <i class="fa-5x fas fa-lightbulb"></i>
+              <p class="title">Consultoría tecnológica</p>
+              <p class="description">
+                Asesoramiento y recomendaciones sobre tecnología y herramientas
+                que pueden ayudar a mejorar tu negocio o proyecto. Puedo
+                ayudarte a elegir la mejor tecnología y herramientas para tus
+                necesidades específicas.
+              </p>
+            </div>
+            <div class="service">
+              <i class="fa-5x fas fa-wrench"></i>
+              <p class="title">Mantenimiento de equipos</p>
+              <p class="description">
+                Servicios de mantenimiento preventivo y correctivo para laptops,
+                celulares y otros dispositivos electrónicos. Realizo
+                diagnósticos y reparaciones para asegurarme de que tus
+                dispositivos estén funcionando al máximo rendimiento.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+    <section id="portfolio">
+      <div class="container">
+        <h2>Mi Portafolio</h2>
+        <div id="container-jobs"></div>
 
-    <div class="conocimientos" id="conocimientos">
-      <div class="informacion">
-        <div class="titulo">
-          <h2>Conocimientos</h2>
-          <hr />
-        </div>
-        <div class="subtitulo">
-          Manejo las siguientes tecnologías y lenguajes de programación.
-        </div>
-      </div>
-      <div class="tecnologias">
-        <div class="icono txt-anaranjado">
-          <i class="fa-8x fab fa-html5"></i>
-        </div>
-        <div class="icono txt-azul">
-          <i class="fa-8x fab fa-css3-alt"></i>
-        </div>
-        <div class="icono txt-amarillo">
-          <i class="fa-8x fab fa-js"></i>
-        </div>
-        <div class="icono txt-azul">
-          <i class="fa-8x fab fa-php"></i>
-        </div>
-        <div class="icono">
-          <i class="fa-8x fab fa-github"></i>
-        </div>
-        <div class="icono txt-azul">
-          <i class="fa-8x fab fa-wordpress"></i>
-        </div>
-      </div>
-    </div>
-
-    <div class="portafolio" id="portafolio">
-      <div class="informacion">
-        <div class="titulo">
-          <h2>Mi Portafolio</h2>
-          <hr />
-        </div>
-        <div class="subtitulo">Proyectos realizados</div>
-      </div>
-      <div class="trabajos">
-        <div class="trabajo">
-          <div class="imgTrabajo">
-            <picture
-              ><source srcset="build/img/BellasArtes.avif" type="image/avif" />
-              <source srcset="build/img/BellasArtes.webp" type="image/webp" />
-              <img
-                loading="lazy"
-                src="build/img/BellasArtes.png"
-                alt="Proyecto Bellas Artes"
-              />
-            </picture>
-          </div>
-          <div class="overlayTrabajo">
-            <a href="http://bellasartes1.42web.io" target="_blank">
-              <div class="tecnologias">
-                <div class="icono">
-                  <i class="fa-brands fa-wordpress"></i>
-                </div>
-              </div>
-              <div class="titulo">
-                <h3>Bellas Artes</h3>
-              </div>
-              <div class="descripcion">
-                <p>Tienda Online realizada en WordPress.</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="trabajo">
-          <div class="imgTrabajo">
-            <picture
-              ><source
-                srcset="build/img/ArtesaniasRinoceronte.avif"
-                type="image/avif"
-              />
-              <source
-                srcset="build/img/ArtesaniasRinoceronte.webp"
-                type="image/webp"
-              />
-              <img
-                loading="lazy"
-                src="build/img/ArtesaniasRinoceronte.png"
-                alt="Proyecto Artesanias"
-              />
-            </picture>
-          </div>
-          <div class="overlayTrabajo">
-            <a href="https://artesaniasrinoceronte.netlify.app" target="_blank">
-              <div class="tecnologias">
-                <div class="icono">
-                  <i class="fa-brands fa-html5"></i>
-                </div>
-                <div class="icono">
-                  <i class="fa-brands fa-css3-alt"></i>
-                </div>
-                <div class="icono">
-                  <i class="fa-brands fa-js"></i>
-                </div>
-              </div>
-              <div class="titulo">
-                <h3>Artesanias Rinoceronte</h3>
-              </div>
-              <div class="descripcion">
-                <p>
-                  Página informativa sobre los productos que ofrece el negocio.
-                  Realizado con HTML, CSS, JS.
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="trabajo">
-          <div class="imgTrabajo">
-            <picture
-              ><source srcset="build/img/Manualidades.avif" type="image/avif" />
-              <source srcset="build/img/Manualidades.webp" type="image/webp" />
-              <img
-                loading="lazy"
-                src="build/img/Manualidades.png"
-                alt="Proyecto Manualidades"
-              />
-            </picture>
-          </div>
-          <div class="overlayTrabajo">
-            <a href="https://manualidadesasa.netlify.app" target="_blank">
-              <div class="tecnologias">
-                <div class="icono">
-                  <i class="fa-brands fa-bootstrap"></i>
-                </div>
-                <div class="icono">
-                  <i class="fa-brands fa-html5"></i>
-                </div>
-                <div class="icono">
-                  <i class="fa-brands fa-css3-alt"></i>
-                </div>
-                <div class="icono">
-                  <i class="fa-brands fa-js"></i>
-                </div>
-              </div>
-              <div class="titulo">
-                <h3>Manualidades</h3>
-              </div>
-              <div class="descripcion">
-                <p>
-                  Pagina informativa de negocio de manualidades. Realizado con
-                  Bootstrap, HTML, CSS, JS.
-                </p>
-              </div>
-            </a>
+        <!-- Modal -->
+        <div class="modal">
+          <div class="modal-content">
+            <h2 class="modal-title"></h2>
+            <div class="image">
+              <img class="modal-image" src="" alt="" />
+            </div>
+            <p class="modal-description"></p>
+            <p class="modal-technologies"></p>
+            <button class="close-btn">Cerrar</button>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="contacto" id="contacto">
-      <div class="informacion">
-        <div class="titulo">
-          <h2>Contacto</h2>
-          <hr />
-        </div>
-        <div class="subtitulo">Complete el formulario para contactarnos.</div>
+    </section>
+    <section id="contact bg-red">
+      <div class="container">
+        <h2>Mi Portafolio</h2>
       </div>
-      <form
-        action="mailto:abelcoc06@gmail.com"
-        class="formulario"
-        autocomplete="off"
-      >
-        <div class="datos">
-          <div class="field">
-            <label for="nombre">Nombre <span>*</span> </label>
-            <input type="text" name="" id="nombre" required />
-          </div>
-          <div class="field">
-            <label for="apellido">Apellido <span>*</span></label>
-            <input type="text" name="" id="apellido" required />
-          </div>
-        </div>
-        <div class="mensaje">
-          <div class="field">
-            <label for="correo">Correo Electrónico <span>*</span></label>
-            <input type="email" name="" id="correo" required />
-          </div>
-          <div class="field">
-            <label for="msj">Mensaje <span>*</span></label>
-            <textarea name="" id="msj" rows="5" required></textarea>
-          </div>
-        </div>
-        <div class="btnForm">
-          <input type="submit" value="Enviar" />
-        </div>
-      </form>
-    </div>
-
-    <footer class="footer">
-      <p>
-        ©ASAA <br />
-        Creado por Abel Acosta. <span>Derechos Reservados</span>
-      </p>
-    </footer>
-
-    <!-- Typed -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <!-- Font Awesome -->
+    </section>
+    <script src="build/js/script.js"></script>
     <script
-      src="https://kit.fontawesome.com/b094e63091.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="build/js/app.js"></script>
-    <!-- jquery -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      src="https://kit.fontawesome.com/cb2bd7ba30.js"
       crossorigin="anonymous"
     ></script>
   </body>

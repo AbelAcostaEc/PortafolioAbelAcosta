@@ -1,0 +1,18 @@
+{
+  "trabajos": [
+    {
+      "titulo": "Página web corporativa",
+      "descripcion": "Desarrollo de una página web corporativa para una empresa de tecnología",
+      "tecnologias": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      "imagen": "build/img/developer.svg",
+      "url": "https://www.ejemplo.com/proyecto1"
+    },
+    {
+      "titulo": "Tienda en línea",
+      "descripcion": "Desarrollo de una tienda en línea para una tienda de ropa",
+      "tecnologias": ["HTML", "CSS", "JavaScript", "React", "Node.js"],
+      "imagen": "build/img/developer.svg",
+      "url": "https://www.ejemplo.com/proyecto2"
+    }
+  ]
+}
