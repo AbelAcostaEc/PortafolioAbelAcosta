@@ -471,25 +471,39 @@ h5 {
 .modal-content {
   background-color: #fefefe;
   margin: 10vh auto 0; /* Centrar vertical y horizontalmente */
-  padding: 20px;
   max-width: 600px;
+  border-radius: 10px;
+}
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+.modal-body {
+  padding: 15px;
+  @include grid(2, 10px);
 
-  .image {
-    width: 100%;
+  .details {
   }
 }
+.modal-footer {
+  display: flex;
+  justify-content: end;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  /* Estilo del botón de cierre */
+  .close-btn {
+    background: #1163c0;
+    color: $white;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
 
-/* Estilo del botón de cierre */
-.close-btn {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+  .close-btn:hover,
+  .close-btn:focus {
+    background-color: #1880f7;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }

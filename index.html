@@ -75,7 +75,7 @@
         </div>
 
         <ul class="menu">
-          <a href="#home"><li>Incio</li></a>
+          <!-- <a href="#home"><li>Incio</li></a> -->
           <a href="#about"><li>Sobre Mi</li></a>
           <a href="#portfolio"><li>Portafolio</li></a>
           <a href="#contact"><li>Contáctame</li></a>
@@ -205,20 +205,44 @@
         <!-- Modal -->
         <div class="modal">
           <div class="modal-content">
-            <h2 class="modal-title"></h2>
-            <div class="image">
-              <img class="modal-image" src="" alt="" />
+            <div class="modal-header">
+              <h3 class="modal-title"></h3>
             </div>
-            <p class="modal-description"></p>
-            <p class="modal-technologies"></p>
-            <button class="close-btn">Cerrar</button>
+            <div class="modal-body">
+              <div class="image">
+                <img class="modal-image" src="" alt="" />
+              </div>
+              <div class="details">
+                <div class="description">
+                  <h4>Descripción:</h4>
+                  <p></p>
+                </div>
+                <div class="technologies">
+                  <h4>Tecnologias Utilizadas:</h4>
+                  <p></p>
+                </div>
+                <a target="_blank" class="btn-project"></a>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="close-btn">Cerrar</button>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="contact bg-red">
+    <section id="contact">
       <div class="container">
-        <h2>Mi Portafolio</h2>
+        <h2>Contacto</h2>
+        <form action="">
+          <label for="subject">Asunto:</label>
+          <input type="text" id="subject" name="subject" required />
+
+          <label for="body">Mensaje:</label>
+          <textarea id="body" name="body" required></textarea>
+
+          <input type="submit" value="Enviar" />
+        </form>
       </div>
     </section>
     <script src="build/js/script.js"></script>

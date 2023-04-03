@@ -88,10 +88,11 @@ function modalPortfolio(proyecto) {
   var modal = document.querySelector(".modal");
   var modalTitle = modal.querySelector(".modal-title");
   var modalImage = modal.querySelector(".modal-image");
-  var modalDescription = modal.querySelector(".modal-description");
-  var modalTechnologies = modal.querySelector(".modal-technologies");
+  var modalDescription = modal.querySelector(".description p");
+  var modalTechnologies = modal.querySelector(".technologies p");
+  var btnProject = modal.querySelector(".btn-project");
   var closeModalButton = document.querySelector(".close-btn");
-
+  console.log(proyecto);
   // Mostrar la información del proyecto en la modal
   modalTitle.textContent = proyecto.titulo;
   modalImage.src = proyecto.imagen;
@@ -100,6 +101,8 @@ function modalPortfolio(proyecto) {
     .map((tec) => `<li>${tec}</li>`)
     .join("");
 
+  btnProject.href = proyecto.url;
+  btnProject.textContent = "Ver Proyecto";
   // Abrir la modal
   modal.style.display = "block";
 
@@ -133,22 +136,11 @@ function getPortfolio() {
         titulo.textContent = trabajo.titulo;
         const descripcion = document.createElement("p");
         descripcion.textContent = trabajo.descripcion;
-        const tecnologias = document.createElement("ul");
-        trabajo.tecnologias.forEach((tec) => {
-          const li = document.createElement("li");
-          li.textContent = tec;
-          tecnologias.appendChild(li);
-        });
-        const enlace = document.createElement("a");
-        enlace.href = trabajo.url;
-        enlace.textContent = "Ver proyecto";
 
         // Añadir los elementos HTML creados al contenedor de cards
         card.appendChild(imageContainer);
         card.appendChild(titulo);
         card.appendChild(descripcion);
-        // card.appendChild(tecnologias);
-        // card.appendChild(enlace);
         contenedor.appendChild(card);
       });
     })
