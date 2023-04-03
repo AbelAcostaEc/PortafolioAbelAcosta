@@ -1,18 +1,25 @@
 {
   "trabajos": [
     {
-      "titulo": "Página web corporativa",
-      "descripcion": "Desarrollo de una página web corporativa para una empresa de tecnología",
+      "titulo": "Proyecto Bellas Artes",
+      "descripcion": "Tienda Online realizada en WordPress.",
       "tecnologias": ["HTML", "CSS", "JavaScript", "Bootstrap"],
-      "imagen": "build/img/developer.svg",
-      "url": "https://www.ejemplo.com/proyecto1"
+      "imagen": "build/img/BellasArtes.png",
+      "url": "http://bellasartes1.42web.io"
     },
     {
-      "titulo": "Tienda en línea",
-      "descripcion": "Desarrollo de una tienda en línea para una tienda de ropa",
+      "titulo": "Proyecto Artesanias",
+      "descripcion": "Página informativa sobre los productos que ofrece el negocio. Realizado con HTML, CSS, JS.",
       "tecnologias": ["HTML", "CSS", "JavaScript", "React", "Node.js"],
-      "imagen": "build/img/developer.svg",
-      "url": "https://www.ejemplo.com/proyecto2"
+      "imagen": "build/img/ArtesaniasRinoceronte.png",
+      "url": "https://artesaniasrinoceronte.netlify.app"
+    },
+    {
+      "titulo": "Manualidades",
+      "descripcion": " Pagina informativa de negocio de manualidades. Realizado con Bootstrap, HTML, CSS, JS.",
+      "tecnologias": ["HTML", "CSS", "JavaScript", "React", "Node.js"],
+      "imagen": "build/img/Manualidades.png",
+      "url": "https://manualidadesasa.netlify.app"
     }
   ]
 }
