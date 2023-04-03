@@ -121,9 +121,11 @@ function getPortfolio() {
         // Crear los elementos HTML para cada trabajo
         const card = document.createElement("div");
         card.classList.add("card");
+        const imageContainer = document.createElement("div");
         const imagen = document.createElement("img");
         imagen.src = trabajo.imagen;
-        imagen.classList.add("img-card");
+        imageContainer.classList.add("img-card");
+        imageContainer.appendChild(imagen);
         card.addEventListener("click", () => {
           modalPortfolio(trabajo);
         });
@@ -142,7 +144,7 @@ function getPortfolio() {
         enlace.textContent = "Ver proyecto";
 
         // Añadir los elementos HTML creados al contenedor de cards
-        card.appendChild(imagen);
+        card.appendChild(imageContainer);
         card.appendChild(titulo);
         card.appendChild(descripcion);
         // card.appendChild(tecnologias);
