@@ -4,21 +4,21 @@
       "titulo": "Proyecto Bellas Artes",
       "descripcion": "Tienda Online realizada en WordPress.",
       "tecnologias": ["WordPress", "Elementor"],
-      "imagen": "build/img/BellasArtes.png",
+      "imagen": "build/img/BellasArtes.webp",
       "url": "#"
     },
     {
       "titulo": "Proyecto Artesanias",
       "descripcion": "Página informativa sobre los productos que ofrece el negocio,",
       "tecnologias": ["HTML", "CSS", "JavaScript"],
-      "imagen": "build/img/ArtesaniasRinoceronte.png",
+      "imagen": "build/img/ArtesaniasRinoceronte.webp",
       "url": "https://artesaniasrinoceronte.netlify.app"
     },
     {
       "titulo": "Manualidades",
       "descripcion": " Pagina informativa de negocio de manualidades",
       "tecnologias": ["HTML", "CSS", "JavaScript", "Bootstrap"],
-      "imagen": "build/img/Manualidades.png",
+      "imagen": "build/img/Manualidades.webp",
       "url": "https://manualidadesasa.netlify.app"
     }
   ]

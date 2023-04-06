@@ -127,6 +127,7 @@ function getPortfolio() {
         const imageContainer = document.createElement("div");
         const imagen = document.createElement("img");
         imagen.src = trabajo.imagen;
+        imagen.alt = trabajo.titulo;
         imageContainer.classList.add("img-card");
         imageContainer.appendChild(imagen);
         card.addEventListener("click", () => {
