@@ -170,6 +170,8 @@ h5 {
   align-items: center;
   padding-right: 20px;
   #btn-mobile-menu {
+    background-color: transparent;
+    border: none;
     padding: 10px;
     font-size: 30px;
     color: $white;
@@ -204,16 +206,22 @@ h5 {
     pointer-events: all;
   }
 
-  a {
-    padding: 15px 15px 5px;
-    color: $primary;
-    border: 1px solid transparent;
-
+  .item-menu {
+    padding: 15px 15px;
     @include mobile {
-      color: $white;
+      padding: 15px 15px 5px;
+    }
+    a {
+      padding: 15px 15px 5px;
+      color: $primary;
+      border: 1px solid transparent;
 
-      &:hover {
-        border-bottom: 1px solid $white;
+      @include mobile {
+        color: $white;
+
+        &:hover {
+          border-bottom: 1px solid $white;
+        }
       }
     }
   }
