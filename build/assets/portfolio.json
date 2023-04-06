@@ -3,21 +3,21 @@
     {
       "titulo": "Proyecto Bellas Artes",
       "descripcion": "Tienda Online realizada en WordPress.",
-      "tecnologias": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      "tecnologias": ["WordPress", "Elementor"],
       "imagen": "build/img/BellasArtes.png",
-      "url": "http://bellasartes1.42web.io"
+      "url": "#"
     },
     {
       "titulo": "Proyecto Artesanias",
-      "descripcion": "Página informativa sobre los productos que ofrece el negocio. Realizado con HTML, CSS, JS.",
-      "tecnologias": ["HTML", "CSS", "JavaScript", "React", "Node.js"],
+      "descripcion": "Página informativa sobre los productos que ofrece el negocio,",
+      "tecnologias": ["HTML", "CSS", "JavaScript"],
       "imagen": "build/img/ArtesaniasRinoceronte.png",
       "url": "https://artesaniasrinoceronte.netlify.app"
     },
     {
       "titulo": "Manualidades",
-      "descripcion": " Pagina informativa de negocio de manualidades. Realizado con Bootstrap, HTML, CSS, JS.",
-      "tecnologias": ["HTML", "CSS", "JavaScript", "React", "Node.js"],
+      "descripcion": " Pagina informativa de negocio de manualidades",
+      "tecnologias": ["HTML", "CSS", "JavaScript", "Bootstrap"],
       "imagen": "build/img/Manualidades.png",
       "url": "https://manualidadesasa.netlify.app"
     }

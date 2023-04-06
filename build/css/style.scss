@@ -344,11 +344,34 @@ h5 {
       grid-template-columns: 2fr 1fr;
       text-align: justify;
     }
+    .btn-cv {
+      display: none;
+      @include mobile {
+        display: inline-block;
+      }
+    }
   }
   .image {
     overflow: hidden;
     max-width: 90%;
     align-self: center;
+  }
+  .btn-cv {
+    padding: 20px;
+    background-color: $primary;
+    color: $white;
+    border-radius: 15px;
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+  .extra {
+    @include mobile {
+      display: none;
+    }
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -412,6 +435,9 @@ h5 {
 #portfolio {
   background-color: $secondary;
   padding-top: 15px;
+  h2 {
+    color: $white;
+  }
 }
 
 .card {
@@ -480,9 +506,37 @@ h5 {
 }
 .modal-body {
   padding: 15px;
-  @include grid(2, 10px);
+  @include grid(1, 10px);
 
-  .details {
+  @include mobile {
+    @include grid(2, 10px);
+  }
+  .image {
+    @include mobile {
+      max-height: 300px;
+    }
+    overflow: hidden;
+  }
+  .btn-project {
+    display: block;
+    padding: 15px;
+    background-color: $primary;
+    color: $white;
+    border-radius: 10px;
+    text-align: center;
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+  .technologies {
+    padding: 10px;
+    li {
+      &::before {
+        content: ">";
+        display: inline;
+        width: 100%;
+      }
+    }
   }
 }
 .modal-footer {
@@ -506,4 +560,36 @@ h5 {
     text-decoration: none;
     cursor: pointer;
   }
+}
+
+#contact {
+  padding: 20px;
+  background: $primary;
+  h2,
+  p {
+    text-align: center;
+    color: $white;
+  }
+  .social {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    .btn-social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 15px;
+      width: 40px;
+      height: 40px;
+      padding: 15px;
+      border-radius: 50%;
+      color: $white;
+    }
+  }
+}
+
+.footer {
+  background: $secondary;
+  color: $white;
+  padding: 20px;
 }

@@ -89,7 +89,7 @@ function modalPortfolio(proyecto) {
   var modalTitle = modal.querySelector(".modal-title");
   var modalImage = modal.querySelector(".modal-image");
   var modalDescription = modal.querySelector(".description p");
-  var modalTechnologies = modal.querySelector(".technologies p");
+  var modalTechnologies = modal.querySelector(".technologies ul");
   var btnProject = modal.querySelector(".btn-project");
   var closeModalButton = document.querySelector(".close-btn");
   console.log(proyecto);
