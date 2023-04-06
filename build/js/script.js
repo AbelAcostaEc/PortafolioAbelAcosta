@@ -96,6 +96,7 @@ function modalPortfolio(proyecto) {
   // Mostrar la información del proyecto en la modal
   modalTitle.textContent = proyecto.titulo;
   modalImage.src = proyecto.imagen;
+  modalImage.alt = proyecto.titulo;
   modalDescription.textContent = proyecto.descripcion;
   modalTechnologies.innerHTML = proyecto.tecnologias
     .map((tec) => `<li>${tec}</li>`)
