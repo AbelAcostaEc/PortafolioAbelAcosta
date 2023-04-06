@@ -1,0 +1,137 @@
+{
+  // Place your área de trabajo de PortafolioAbelAcosta snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "HTML Boilerplate": {
+    "prefix": "!html",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html>",
+      "<head>",
+      "\t<meta charset=\"utf-8\">",
+      "\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "\t<title>$1</title>",
+      "</head>",
+      "<body>",
+      "\t$2",
+      "</body>",
+      "</html>"
+    ],
+    "description": "HTML boilerplate code."
+  },
+  "Link to CSS": {
+    "prefix": "linkcss",
+    "body": ["<link rel=\"stylesheet\" type=\"text/css\" href=\"$1\">"],
+    "description": "Link to CSS file."
+  },
+  "Link to JS": {
+    "prefix": "linkjs",
+    "body": ["<script type=\"text/javascript\" src=\"$1\"></script>"],
+    "description": "Link to JS file."
+  },
+  "Background Color": {
+    "prefix": "bgc",
+    "body": ["background-color: $1;"],
+    "description": "Add a background color."
+  },
+  "Text Color": {
+    "prefix": "tc",
+    "body": ["color: $1;"],
+    "description": "Add a text color."
+  },
+  "Font Family": {
+    "prefix": "ff",
+    "body": ["font-family: $1;"],
+    "description": "Add a font family."
+  },
+  "Font Size": {
+    "prefix": "fs",
+    "body": ["font-size: $1;"],
+    "description": "Add a font size."
+  },
+  "Margin": {
+    "prefix": "m",
+    "body": ["margin: $1;"],
+    "description": "Add a margin."
+  },
+  "Padding": {
+    "prefix": "p",
+    "body": ["padding: $1;"],
+    "description": "Add a padding."
+  },
+  "Console Log": {
+    "scope": "javascript,typescript",
+    "prefix": "clg",
+    "body": ["console.log($1);"],
+    "description": "Create a console.log statement."
+  },
+  "Function Declaration": {
+    "scope": "javascript,typescript",
+    "prefix": "func",
+    "body": ["function ${1:name}(${2:args}) {", "\t$3", "}"],
+    "description": "Create a function declaration."
+  },
+  "If Statement": {
+    "scope": "javascript,typescript",
+    "prefix": "if",
+    "body": ["if (${1:condition}) {", "\t$2", "}"],
+    "description": "Create an if statement."
+  },
+  "If Else Statement": {
+    "scope": "javascript,typescript",
+    "prefix": "ife",
+    "body": ["if (${1:condition}) {", "\t$2", "} else {", "\t$3", "}"],
+    "description": "Create an if-else statement."
+  },
+  "Switch Statement": {
+    "scope": "javascript,typescript",
+    "prefix": "switch",
+    "body": [
+      "switch (${1:expression}) {",
+      "\tcase ${2:value}:",
+      "\t\t$3",
+      "\t\tbreak;",
+      "\tdefault:",
+      "\t\t$4",
+      "}"
+    ],
+    "description": "Create a switch statement."
+  },
+  "Try Catch Statement": {
+    "scope": "javascript,typescript",
+    "prefix": "try",
+    "body": ["try {", "\t$1", "} catch (${2:error}) {", "\t$3", "}"],
+    "description": "Create a try-catch statement."
+  },
+  "Arrow Function": {
+    "scope": "javascript,typescript",
+    "prefix": "arrow",
+    "body": ["const ${1:name} = (${2:params}) => {", "\t$3", "};"],
+    "description": "Create an arrow function."
+  },
+  "Object Literal": {
+    "scope": "javascript,typescript",
+    "prefix": "obj",
+    "body": ["const ${1:name} = {", "\t${2:key}: ${3:value}", "};"],
+    "description": "Create an object literal."
+  },
+  "Array Literal": {
+    "scope": "javascript,typescript",
+    "prefix": "arr",
+    "body": ["const ${1:name} = [", "\t${2:value}", "];"],
+    "description": "Create an array literal."
+  }
+}
