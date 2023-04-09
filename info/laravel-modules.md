@@ -8,7 +8,7 @@ laravel-modules# Laravel-Modules
 
 2.1 `composer require nwidart/laravel-modules`
 
-2.2 `php artisan vendor:publish--provider="Nwidart\Modules\LaravelModulesServiceProvider"`
+2.2 `php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"`
 
 2.3 In `Composer.json` add line "Modules"
 
