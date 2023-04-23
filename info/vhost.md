@@ -9,7 +9,7 @@
 2.- `C:\xampp\apache\conf\extra`
 
 ```sh
-<VirtualHost \*>
+<VirtualHost *>
    DocumentRoot "C:\miproyecto\httpdocs"
    ServerName miproyecto.local.com
    <Directory "C:\miproyecto\httpdocs">
