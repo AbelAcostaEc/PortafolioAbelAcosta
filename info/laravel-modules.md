@@ -2,11 +2,11 @@ laravel-modules# Laravel-Modules
 
 ## Create project laravel
 
-1.1- `composer create-project laravel/laravel your-project-name 4.2`
+1.1- `composer create-project laravel/laravel your-project-name 9.*`
 
 ## Install laravel-modules
 
-2.1 `composer require nwidart/laravel-modules`
+2.1 `composer require nwidart/laravel-modules 9.*` 
 
 2.2 `php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"`
 
