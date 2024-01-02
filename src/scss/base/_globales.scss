@@ -1,0 +1,34 @@
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	list-style: none;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	transition: 0.3s ease-in-out;
+}
+
+body {
+	font-family: $principal_font;
+	// font-size: 1.6rem;
+}
+
+body {
+	font-family: "Source Code Pro", monospace;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	text-align: center;
+}
