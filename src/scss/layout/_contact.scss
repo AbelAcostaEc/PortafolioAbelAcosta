@@ -1,25 +1,28 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
 #contact {
-	padding: 20px;
-	background: $primary;
-	h2,
-	p {
-		text-align: center;
-		color: $white;
-	}
-	.social {
-		margin-top: 20px;
-		display: flex;
-		justify-content: center;
-		.btn-social {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin: 0 15px;
-			width: 40px;
-			height: 40px;
-			padding: 15px;
-			border-radius: 50%;
-			color: $white;
-		}
-	}
+    padding: 20px;
+    background: v.$primary;
+    h2,
+    p {
+        text-align: center;
+        color: v.$white;
+    }
+    .social {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        .btn-social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 15px;
+            width: 40px;
+            height: 40px;
+            padding: 15px;
+            border-radius: 50%;
+            color: v.$white;
+        }
+    }
 }

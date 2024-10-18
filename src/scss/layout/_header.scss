@@ -1,103 +1,106 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
 .header {
-	overflow: hidden;
-	background: url("../img/background-asaa.svg");
-	background-size: cover;
-	background-repeat: no-repeat;
+    overflow: hidden;
+    background: url("../img/background-asaa.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .nav {
-	display: flex;
-	justify-content: space-between;
-	position: relative;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
 }
 .logo {
-	width: 100px;
-	img {
-		max-width: 100%;
-	}
+    width: 100px;
+    img {
+        max-width: 100%;
+    }
 }
 
 .mobile-menu {
-	display: flex;
-	align-items: center;
-	padding-right: 20px;
-	#btn-mobile-menu {
-		background-color: transparent;
-		border: none;
-		padding: 10px;
-		font-size: 30px;
-		color: $white;
-	}
-	@include mobile {
-		display: none;
-	}
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    #btn-mobile-menu {
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        font-size: 30px;
+        color: v.$white;
+    }
+    @include m.mobile {
+        display: none;
+    }
 }
 
 .menu {
-	display: flex;
-	opacity: 0;
-	pointer-events: none;
-	flex-direction: column;
-	position: absolute;
-	width: 100%;
-	background-color: $white;
-	text-align: center;
-	top: 100px;
-	&.active {
-		pointer-events: all;
-	}
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    background-color: v.$white;
+    text-align: center;
+    top: 100px;
+    &.active {
+        pointer-events: all;
+    }
 
-	@include mobile {
-		flex-direction: row;
-		align-items: center;
-		position: relative;
-		width: auto;
-		background: none;
-		top: auto;
-		opacity: 1;
-		pointer-events: all;
-	}
+    @include m.mobile {
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+        width: auto;
+        background: none;
+        top: auto;
+        opacity: 1;
+        pointer-events: all;
+    }
 
-	.item-menu {
-		padding: 15px 15px;
-		@include mobile {
-			padding: 15px 15px 5px;
-		}
-		a {
-			padding: 15px 15px 5px;
-			color: $primary;
-			border: 1px solid transparent;
+    .item-menu {
+        padding: 15px 15px;
+        @include m.mobile {
+            padding: 15px 15px 5px;
+        }
+        a {
+            padding: 15px 15px 5px;
+            color: v.$primary;
+            border: 1px solid transparent;
 
-			@include mobile {
-				color: $white;
+            @include m.mobile {
+                color: v.$white;
 
-				&:hover {
-					border-bottom: 1px solid $white;
-				}
-			}
-		}
-	}
+                &:hover {
+                    border-bottom: 1px solid v.$white;
+                }
+            }
+        }
+    }
 }
 
 .resume {
-	@include grid(1, 10px);
-	@include mobile {
-		@include grid(2, 10px);
-	}
+    @include m.grid(1, 10px);
+    @include m.mobile {
+        @include m.grid(2, 10px);
+    }
 
-	.description {
-		color: $white;
-		font-size: 24px;
-		text-align: center;
-		align-self: center;
-	}
-	.img {
-		overflow: hidden;
-		text-align: center;
-		img {
-			width: 80vw;
-			@include mobile {
-				max-width: 400px;
-			}
-		}
-	}
+    .description {
+        color: v.$white;
+        font-size: 24px;
+        text-align: center;
+        align-self: center;
+    }
+    .img {
+        overflow: hidden;
+        text-align: center;
+        img {
+            width: 80vw;
+            @include m.mobile {
+                max-width: 400px;
+            }
+        }
+    }
 }

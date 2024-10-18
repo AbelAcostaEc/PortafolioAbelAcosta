@@ -1,18 +1,19 @@
+@use 'variables' as v;
 /** Media Queries **/
 @mixin mobile {
-	@media (min-width: #{$mobile}) {
+	@media (min-width: v.$mobile) {
 		@content;
 	}
 }
 
 @mixin tablet {
-	@media (min-width: #{$tablet}) {
+	@media (min-width: v.$tablet) {
 		@content;
 	}
 }
 
 @mixin desktop {
-	@media (min-width: #{$desktop}) {
+	@media (min-width: $desktop) {
 		@content;
 	}
 }
@@ -24,7 +25,7 @@
 
 @mixin button($bgColor, $display) {
 	background-color: $bgColor;
-	color: $blanco;
+	color: v.$white;
 	font-weight: $bold;
 	text-decoration: none;
 	padding: 1rem 3rem;

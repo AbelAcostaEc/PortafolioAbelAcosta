@@ -1,59 +1,62 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
 .container-loader {
-	background-color: #f3f3f3;
-	position: fixed;
-	width: 100vw;
-	height: 100vh;
-	z-index: 9999;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    background-color: #f3f3f3;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 //animacion loader
 @keyframes loaderAnimation {
-	0%,
-	80%,
-	100% {
-		box-shadow: 0 2.5em 0 -1.3em;
-	}
-	40% {
-		box-shadow: 0 2.5em 0 0;
-	}
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 2.5em 0 -1.3em;
+    }
+    40% {
+        box-shadow: 0 2.5em 0 0;
+    }
 }
 
 // propiedades % @extend
 %load {
-	border-radius: 50%;
-	width: 2.5em;
-	height: 2.5em;
-	animation: loaderAnimation 1.5s infinite ease-in-out;
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    animation: loaderAnimation 1.5s infinite ease-in-out;
 }
 
 %pseduos {
-	position: absolute;
-	top: 0;
+    position: absolute;
+    top: 0;
 }
 
 // Loader
 .loader {
-	@extend %load;
-	color: #4685fa;
-	font-size: 13px;
-	position: relative;
-	animation-delay: -0.16s;
+    @extend %load;
+    color: #4685fa;
+    font-size: 13px;
+    position: relative;
+    animation-delay: -0.16s;
 
-	&::before {
-		content: "";
-		@extend %load;
-		@extend %pseduos;
-		left: -3.5em;
-		animation-delay: -0.32s;
-	}
+    &::before {
+        content: "";
+        @extend %load;
+        @extend %pseduos;
+        left: -3.5em;
+        animation-delay: -0.32s;
+    }
 
-	&::after {
-		content: "";
-		@extend %load;
-		@extend %pseduos;
-		left: 3.5em;
-	}
+    &::after {
+        content: "";
+        @extend %load;
+        @extend %pseduos;
+        left: 3.5em;
+    }
 }

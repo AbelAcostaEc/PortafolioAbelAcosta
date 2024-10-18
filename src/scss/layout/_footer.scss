@@ -1,5 +1,8 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
 .footer {
-    background: $secondary;
-    color: $white;
+    background: v.$secondary;
+    color: v.$white;
     padding: 20px;
-  }
+}

@@ -1,3 +1,5 @@
+@use 'variables' as v;
+
 *,
 *:before,
 *:after {
@@ -9,7 +11,7 @@
 }
 
 body {
-	font-family: $principal_font;
+	font-family: v.$principal_font;
 	// font-size: 1.6rem;
 }
 
