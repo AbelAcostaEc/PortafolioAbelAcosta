@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;600;700&display=swap");
 
 // Fuentes
-$principal_font: "Source Code Pro", monospace;
+$primary-font: "Source Code Pro", monospace;
 
-// Tamaño de Media Queries
-$mobile: 480px;
-$tablet: 768px;
-$desktop: 1024px;
+// Media Query Breakpoints
+$breakpoint-phone: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
 
-// Colores
-$black: #000000;
+// Colors
+$blue: #0da6f3;
+$red: #cb0000;
+$black: #1a1b15;
 $yellow: #e08709;
 $green: #71b100;
 $white: #ffffff;
@@ -20,11 +22,26 @@ $success: #38e238;
 $primary: #103d79;
 $secondary: #275189;
 
-$separation: 5rem;
+// Spacing
+$spacing-large: 5rem;
+$spacing-medium: 3rem;
+$spacing-small: 1.5rem;
 
-// Fuentes
+// Font Weights
+$font-thin: 300;
+$font-regular: 400;
+$font-bold: 700;
+$font-black: 900;
 
-$thin: 300;
-$regular: 400;
-$bold: 700;
-$black: 900;
+// Border Radius
+$border-radius: 0.5rem;
+
+// Shadows
+$shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2);
+$shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-medium: 0.4s ease;
+$transition-slow: 0.6s ease;

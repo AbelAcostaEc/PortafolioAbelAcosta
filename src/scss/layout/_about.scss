@@ -34,7 +34,7 @@
         }
         .text-tab {
             display: none;
-            @include m.mobile {
+            @include m.phone {
                 display: block;
             }
         }
@@ -76,13 +76,13 @@
     .description {
         @include m.grid(1, 10px);
 
-        @include m.mobile {
+        @include m.phone {
             grid-template-columns: 2fr 1fr;
             text-align: justify;
         }
         .btn-cv {
             display: none;
-            @include m.mobile {
+            @include m.phone {
                 display: inline-block;
             }
         }
@@ -105,7 +105,7 @@
         margin-top: 15px;
         display: flex;
         justify-content: center;
-        @include m.mobile {
+        @include m.phone {
             display: none;
         }
     }
@@ -147,7 +147,7 @@
     .services-container {
         @include m.grid(1, 10px);
 
-        @include m.mobile {
+        @include m.phone {
             @include m.grid(3, 10px);
         }
 

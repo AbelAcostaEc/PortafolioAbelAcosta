@@ -1,298 +1,208 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Abel Acosta</title>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Abel Acosta</title>
 
-    <!-- ETIQUETAS META -->
-    <meta name="author" content="Abel Acosta" />
-    <meta name="copyright" content="&copy ASAA 2023." />
-    <meta name="email" content="abel.2833@hotmail.com" />
-    <meta
-      name="description"
-      content="Portafolio de desarrollo web de Abel Acosta, con experiencia en HTML, CSS, JavaScript, y otras tecnologías web."
-    />
-    <meta
-      name="keywords"
-      content="desarrollador web, HTML, CSS, JavaScript, experiencia, portafolio"
-    />
+        <!-- ETIQUETAS META -->
+        <meta name="author" content="Abel Acosta" />
+        <meta name="copyright" content="&copy ASAA 2023." />
+        <meta name="email" content="abel.2833@hotmail.com" />
+        <meta name="description" content="Portafolio de desarrollo web de Abel Acosta, con experiencia en HTML, CSS, JavaScript, y otras tecnologías web." />
+        <meta name="keywords" content="desarrollador web, HTML, CSS, JavaScript, experiencia, portafolio" />
 
-    <!-- RESPONSIVIDAD -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=0"
-    />
+        <!-- RESPONSIVIDAD -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=0" />
 
-    <!-- SOCIAL CARDS FACEBOOK Y TWITTER-->
-    <meta
-      property="og:title"
-      content="Portafolio de Desarrollo Web - Abel Acosta"
-    />
-    <meta
-      property="og:description"
-      content="Soy un programador recién graduado con conocimientos en HTML, CSS, JS, PHP, Java, Laravel y Livewire. Me encanta crear proyectos web innovadores y mejorar mis habilidades de programación."
-    />
+        <!-- SOCIAL CARDS FACEBOOK Y TWITTER-->
+        <meta property="og:title" content="Portafolio de Desarrollo Web - Abel Acosta" />
+        <meta property="og:description" content="Soy un programador recién graduado con conocimientos en HTML, CSS, JS, PHP, Java, Laravel y Livewire. Me encanta crear proyectos web innovadores y mejorar mis habilidades de programación." />
 
-    <meta
-      property="og:image"
-      content="https://abelacostaportafolio.js.org/img/logo-Acosta.png"
-    />
-    <meta property="og:url" content="https://abelacostaportafolio.js.org/" />
-    <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://abelacostaportafolio.js.org/img/logo-Acosta.png" />
+        <meta property="og:url" content="https://abelacostaportafolio.js.org/" />
+        <meta property="og:type" content="website" />
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="build/css/app.css" />
+        <!-- Estilos -->
+        <link rel="stylesheet" href="build/css/app.min.css" />
 
-    <!-- Favicon -->
-    <link
-      rel="shortcut icon"
-      href="build/img/logo-Acosta.ico"
-      type="image/x-icon"
-    />
-    <link rel="icon" href="build/img/logo-Acosta.ico" type="image/x-icon" />
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="build/img/logo-Acosta.ico" type="image/x-icon" />
+        <link rel="icon" href="build/img/logo-Acosta.ico" type="image/x-icon" />
 
-    <!-- Font Avesome CDN -->
-    <!--   <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    /> -->
-  </head>
+        <!-- Font Avesome CDN -->
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+    </head>
 
-  <body>
-    <div class="container-loader">
-      <div class="loader"></div>
-    </div>
-    <header class="header">
-      <nav class="nav">
-        <div class="logo">
-          <img src="build/img/logo-Acosta.png" alt="Logo Abel Acosta (ASAA)" />
+    <body>
+        <div class="container-loader">
+            <div class="loader"></div>
         </div>
+        <header class="header">
+            <nav class="nav">
+                <div class="logo">
+                    <img src="build/img/logo-Acosta.png" alt="Logo Abel Acosta (ASAA)" />
+                </div>
 
-        <div class="mobile-menu">
-          <button id="btn-mobile-menu">
-            <i class="fa fa-bars"></i>
-          </button>
-        </div>
+                <div class="mobile-menu">
+                    <button id="btn-mobile-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
 
-        <ul class="menu">
-          <!-- <a href="#home"><li>Incio</li></a> -->
-          <li class="item-menu"><a href="#about">Sobre Mi</a></li>
-          <li class="item-menu"><a href="#portfolio">Portafolio</a></li>
-          <li class="item-menu"><a href="#contact">Contáctame</a></li>
-        </ul>
-      </nav>
+                <ul class="menu">
+                    <!-- <a href="#home"><li>Incio</li></a> -->
+                    <li class="item-menu"><a href="#about">Sobre Mi</a></li>
+                    <li class="item-menu"><a href="#portfolio">Portafolio</a></li>
+                    <li class="item-menu"><a href="#contact">Contáctame</a></li>
+                </ul>
+            </nav>
 
-      <div class="resume">
-        <div class="description">
-          <p>Hola, Mi nombre es:</p>
-          <h1>Abel Acosta</h1>
-          <p>Soy <span id="typewriter"></span></p>
-        </div>
-        <div class="img">
-          <img src="build/img/img-abel.webp" alt="Abel Acosta foto" />
-        </div>
-      </div>
-    </header>
-
-    <section id="about">
-      <div class="about-tabs container">
-        <a href="#about-info" class="tab bg-sky-blue active">
-          <i class="fa fa-user icon-tab"></i>
-          <span class="text-tab">Sobre Mi</span>
-        </a>
-        <a href="#skills" class="tab bg-yellow">
-          <i class="fa fa-graduation-cap icon-tab"></i>
-          <span class="text-tab">Conocimientos</span>
-        </a>
-        <a href="#services" class="tab bg-green">
-          <i class="fa fa-desktop icon-tab"></i>
-          <span class="text-tab">Servicios</span>
-        </a>
-      </div>
-      <div class="about-container">
-        <div id="about-info" class="about-section bg-sky-blue active-section">
-          <h3>Sobre Mí</h3>
-          <br />
-          <div class="description">
-            <p>
-              ¡Hola! Me llamo Abel Acosta y soy un desarrollador joven y
-              apasionado con experiencia en tecnologías web, Me gradué en
-              tecnología en sistemas y tengo 25 años. <br />
-              Tengo Concocimientos en HTML, CSS, JS, PHP, Wordpress y también
-              tengo experiencia en frameworks populares como Bootstrap, Laravel
-              y Livewire. <br />
-              Con una experiencia de dos meses en el desarrollo de sistemas, he
-              tenido la oportunidad de aplicar mis conocimientos y habilidades
-              en proyectos reales. Me encantaría ayudarte a crear una solución
-              digital para tu negocio o proyecto, ¡no dudes en contactarme!
-              <br /><br />
-              <a
-                class="btn-cv"
-                href="build/assets/abelcv.pdf"
-                download="Abel Acosta"
-                target="_blank"
-                >Descargar CV</a
-              >
-            </p>
-            <div class="image">
-              <img
-                src="build/img/developer.svg"
-                alt="Imagen desarrollador Web"
-              />
-            </div>
-          </div>
-          <div class="extra">
-            <a
-              class="btn-cv"
-              href="build/assets/abelcv.pdf"
-              download="Abel Acosta"
-              target="_blank"
-              >Descargar CV</a
-            >
-          </div>
-        </div>
-        <div id="skills" class="about-section bg-yellow">
-          <h3>Mis Conocimientos</h3>
-          <br />
-          <p>
-            Soy habilidoso en tecnologías web como HTML, CSS, JavaScript, PHP,
-            WordPress, Laravel, Livewire y Angular. He desarrollado soluciones
-            digitales efectivas para empresas y proyectos diversos, garantizando
-            una excelente experiencia para los usuarios finales.
-          </p>
-          <div class="icons">
-            <i class="fa fa-html5"></i>
-            <i class="fa fa-css3"></i>
-            <i class="fab fa-js"></i>
-            <i class="fa fa-wordpress"></i>
-            <i class="fab fa-github"></i>
-            <i class="fab fa-php"></i>
-          </div>
-        </div>
-        <div id="services" class="about-section bg-green">
-          <h3>Servicios</h3>
-          <br />
-          <div class="services-container">
-            <div class="service">
-              <i class="fa-5x fas fa-code"></i>
-              <p class="title">Desarrollo web</p>
-              <p class="description">
-                Desarrollo de sitios web con diseños personalizados, adaptados a
-                las necesidades de cada cliente y optimizados para la mejor
-                experiencia del usuario.
-              </p>
-            </div>
-            <div class="service">
-              <i class="fa-5x fas fa-mobile"></i>
-              <p class="title">Desarrollo de aplicaciones</p>
-              <p class="description">
-                Diseño y desarrollo de aplicaciones móviles y de escritorio para
-                diferentes sistemas operativos. Puedo ayudarte a crear una
-                aplicación que sea fácil de usar y atractiva para tus usuarios.
-              </p>
-            </div>
-            <div class="service">
-              <i class="fa-5x fas fa-lightbulb"></i>
-              <p class="title">Consultoría tecnológica</p>
-              <p class="description">
-                Asesoramiento y recomendaciones sobre tecnología y herramientas
-                que pueden ayudar a mejorar tu negocio o proyecto. Puedo
-                ayudarte a elegir la mejor tecnología y herramientas para tus
-                necesidades específicas.
-              </p>
-            </div>
-            <div class="service">
-              <i class="fa-5x fas fa-wrench"></i>
-              <p class="title">Mantenimiento de equipos</p>
-              <p class="description">
-                Servicios de mantenimiento preventivo y correctivo para laptops,
-                celulares y otros dispositivos electrónicos. Realizo
-                diagnósticos y reparaciones para asegurarme de que tus
-                dispositivos estén funcionando al máximo rendimiento.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="portfolio">
-      <div class="container">
-        <h2>Mi Portafolio</h2>
-        <div id="container-jobs"></div>
-        <!-- Modal -->
-        <div class="modal">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title"></h3>
-            </div>
-            <div class="modal-body">
-              <div class="image">
-                <img class="modal-image" src="" alt="" />
-              </div>
-              <div class="details">
+            <div class="resume">
                 <div class="description">
-                  <h4>Descripción:</h4>
-                  <p></p>
+                    <p>Hola, Mi nombre es:</p>
+                    <h1>Abel Acosta</h1>
+                    <p>Soy <span id="typewriter"></span></p>
                 </div>
-                <div class="technologies">
-                  <h4>Tecnologias Utilizadas:</h4>
-                  <ul></ul>
+                <div class="img">
+                    <img src="build/img/img-abel.webp" alt="Abel Acosta foto" />
                 </div>
-                <a target="_blank" class="btn-project"></a>
-              </div>
             </div>
-            <div class="modal-footer">
-              <button class="close-btn">Cerrar</button>
+        </header>
+
+        <section id="about">
+            <div class="about-tabs container">
+                <a href="#about-info" class="tab bg-sky-blue active">
+                    <i class="fa fa-user icon-tab"></i>
+                    <span class="text-tab">Sobre Mi</span>
+                </a>
+                <a href="#skills" class="tab bg-yellow">
+                    <i class="fa fa-graduation-cap icon-tab"></i>
+                    <span class="text-tab">Conocimientos</span>
+                </a>
+                <a href="#services" class="tab bg-green">
+                    <i class="fa fa-desktop icon-tab"></i>
+                    <span class="text-tab">Servicios</span>
+                </a>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="contact">
-      <div class="container">
-        <h2>Contactos</h2>
-        <p>Contáctame mediante mis redes sociales.</p>
-        <div class="social">
-          <a
-            href="https://www.facebook.com/people/ASAA-Soluciones-Informáticas/100086119248028/?sk=about"
-            class="btn-social"
-            style="background-color: #3b5998"
-            target="_blank"
-          >
-            <i class="fa fa-facebook-f"></i>
-          </a>
-          <a
-            href="http://wa.link/yvnz8v"
-            class="btn-social"
-            style="background-color: #25d366"
-            target="_blank"
-          >
-            <i class="fa fa-whatsapp"></i>
-          </a>
-          <a
-            href="https://github.com/AbelAcostaEc"
-            class="btn-social"
-            style="background-color: #343434"
-            target="_blank"
-          >
-            <i class="fa fa-github"></i>
-          </a>
-          <a
-            href="http://www.linkedin.com/in/abel-acosta-asaa"
-            class="btn-social"
-            style="background-color: #0077b5"
-            target="_blank"
-          >
-            <i class="fa fa-linkedin"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-        
-    <footer class="footer">
-      <p class="copy">&copy; 2023 Derechos Reservados Abel Acosta</p>
-    </footer>
-    
-    <script src="build/js/bundle.min.js"></script>
-  </body>
+            <div class="about-container">
+                <div id="about-info" class="about-section bg-sky-blue active-section">
+                    <h3>Sobre Mí</h3>
+                    <br />
+                    <div class="description">
+                        <p>
+                            ¡Hola! Me llamo Abel Acosta y soy un desarrollador joven y apasionado con experiencia en tecnologías web, Me gradué en tecnología en sistemas y tengo 25 años. <br />
+                            Tengo Concocimientos en HTML, CSS, JS, PHP, Wordpress y también tengo experiencia en frameworks populares como Bootstrap, Laravel y Livewire. <br />
+                            Con una experiencia de dos meses en el desarrollo de sistemas, he tenido la oportunidad de aplicar mis conocimientos y habilidades en proyectos reales. Me encantaría ayudarte a crear una solución digital para tu negocio o proyecto, ¡no dudes en contactarme!
+                            <br /><br />
+                            <a class="btn-cv" href="build/assets/abelcv.pdf" download="Abel Acosta" target="_blank">Descargar CV</a>
+                        </p>
+                        <div class="image">
+                            <img src="build/img/developer.svg" alt="Imagen desarrollador Web" />
+                        </div>
+                    </div>
+                    <div class="extra">
+                        <a class="btn-cv" href="build/assets/abelcv.pdf" download="Abel Acosta" target="_blank">Descargar CV</a>
+                    </div>
+                </div>
+                <div id="skills" class="about-section bg-yellow">
+                    <h3>Mis Conocimientos</h3>
+                    <br />
+                    <p>Soy habilidoso en tecnologías web como HTML, CSS, JavaScript, PHP, WordPress, Laravel, Livewire y Angular. He desarrollado soluciones digitales efectivas para empresas y proyectos diversos, garantizando una excelente experiencia para los usuarios finales.</p>
+                    <div class="icons">
+                        <i class="fa fa-html5"></i>
+                        <i class="fa fa-css3"></i>
+                        <i class="fab fa-js"></i>
+                        <i class="fa fa-wordpress"></i>
+                        <i class="fab fa-github"></i>
+                        <i class="fab fa-php"></i>
+                    </div>
+                </div>
+                <div id="services" class="about-section bg-green">
+                    <h3>Servicios</h3>
+                    <br />
+                    <div class="services-container">
+                        <div class="service">
+                            <i class="fa-5x fas fa-code"></i>
+                            <p class="title">Desarrollo web</p>
+                            <p class="description">Desarrollo de sitios web con diseños personalizados, adaptados a las necesidades de cada cliente y optimizados para la mejor experiencia del usuario.</p>
+                        </div>
+                        <div class="service">
+                            <i class="fa-5x fas fa-mobile"></i>
+                            <p class="title">Desarrollo de aplicaciones</p>
+                            <p class="description">Diseño y desarrollo de aplicaciones móviles y de escritorio para diferentes sistemas operativos. Puedo ayudarte a crear una aplicación que sea fácil de usar y atractiva para tus usuarios.</p>
+                        </div>
+                        <div class="service">
+                            <i class="fa-5x fas fa-lightbulb"></i>
+                            <p class="title">Consultoría tecnológica</p>
+                            <p class="description">Asesoramiento y recomendaciones sobre tecnología y herramientas que pueden ayudar a mejorar tu negocio o proyecto. Puedo ayudarte a elegir la mejor tecnología y herramientas para tus necesidades específicas.</p>
+                        </div>
+                        <div class="service">
+                            <i class="fa-5x fas fa-wrench"></i>
+                            <p class="title">Mantenimiento de equipos</p>
+                            <p class="description">Servicios de mantenimiento preventivo y correctivo para laptops, celulares y otros dispositivos electrónicos. Realizo diagnósticos y reparaciones para asegurarme de que tus dispositivos estén funcionando al máximo rendimiento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <div class="container">
+                <h2>Mi Portafolio</h2>
+                <div id="container-jobs"></div>
+                <!-- Modal -->
+                <div class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title"></h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="image">
+                                <img class="modal-image" src="" alt="" />
+                            </div>
+                            <div class="details">
+                                <div class="description">
+                                    <h4>Descripción:</h4>
+                                    <p></p>
+                                </div>
+                                <div class="technologies">
+                                    <h4>Tecnologias Utilizadas:</h4>
+                                    <ul></ul>
+                                </div>
+                                <a target="_blank" class="btn-project"></a>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="close-btn">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="container">
+                <h2>Contactos</h2>
+                <p>Contáctame mediante mis redes sociales.</p>
+                <div class="social">
+                    <a href="https://www.facebook.com/people/ASAA-Soluciones-Informáticas/100086119248028/?sk=about" class="btn-social" style="background-color: #3b5998" target="_blank">
+                        <i class="fa fa-facebook-f"></i>
+                    </a>
+                    <a href="http://wa.link/yvnz8v" class="btn-social" style="background-color: #25d366" target="_blank">
+                        <i class="fa fa-whatsapp"></i>
+                    </a>
+                    <a href="https://github.com/AbelAcostaEc" class="btn-social" style="background-color: #343434" target="_blank">
+                        <i class="fa fa-github"></i>
+                    </a>
+                    <a href="http://www.linkedin.com/in/abel-acosta-asaa" class="btn-social" style="background-color: #0077b5" target="_blank">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p class="copy">&copy; 2023 Derechos Reservados Abel Acosta</p>
+        </footer>
+
+        <script src="build/js/app.min.js"></script>
+    </body>
 </html>

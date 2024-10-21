@@ -1,27 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
-	// Inicializar DarkModeToggle
-	const darkModeToggle = new DarkModeToggle(".dark-mode-button");
+    try {
+        const darkModeToggle = new DarkModeToggle(".dark-mode-button");
+    } catch (error) {
+        console.error("Error initializing DarkModeToggle:", error);
+    }
 
-	// Crear una instancia de la clase TypeWriter
-	const myTypeWriter = new TypeWriter(
-		["Programador", "Desarrollador Web"],
-		"#typewriter",
-		200
-	);
+    try {
+        const myTypeWriter = new TypeWriter(["Programador", "Desarrollador Web"], "#typewriter", 200);
+    } catch (error) {
+        console.error("Error initializing TypeWriter:", error);
+    }
 
-	// Crear una instancia de la clase SectionChanger
-	const mySectionChanger = new SectionChanger(".about-tabs", ".about-sections");
+    try {
+        const mySectionChanger = new SectionChanger(".about-tabs", ".about-sections");
+    } catch (error) {
+        console.error("Error initializing SectionChanger:", error);
+    }
 
-	// Crear una instancia de la clase PortfolioFetcher con el ID del contenedor
-	const myPortfolioFetcher = new PortfolioFetcher("container-jobs");
+    try {
+        const myPortfolioFetcher = new PortfolioFetcher("container-jobs");
+        myPortfolioFetcher.fetchPortfolio("build/assets/portfolio.json");
+    } catch (error) {
+        console.error("Error initializing PortfolioFetcher:", error);
+    }
 
-	// Llamar al método fetchPortfolio con la ruta al archivo JSON de trabajos
-	myPortfolioFetcher.fetchPortfolio("build/assets/portfolio.json");
+    try {
+        const myMobileMenu = new MobileMenu("btn-mobile-menu", "i", ".menu");
+    } catch (error) {
+        console.error("Error initializing MobileMenu:", error);
+    }
 
-	// Crear una instancia de la clase MobileMenu con los selectores y ID correspondientes
-	const myMobileMenu = new MobileMenu("btn-mobile-menu", "i", ".menu");
+    try {
+        const markdownViewer = new MarkdownViewer();
+    } catch (error) {
+        console.error("Error initializing MarkdownViewer:", error);
+    }
 });
 
 window.addEventListener("load", () => {
-	preloader(".container-loader");
+    try {
+        preloader(".container-loader");
+    } catch (error) {
+        console.error("Error in preloader:", error);
+    }
 });

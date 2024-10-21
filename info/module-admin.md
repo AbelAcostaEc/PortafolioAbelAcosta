@@ -1,23 +1,48 @@
-Module-Administration# Module-Administration
+# Módulo de Administración
 
-## Import Spatie Laravel
+## Importar Spatie Laravel
 
-1.1- `composer require spatie/laravel-permission`
+1. **Instalar el paquete de permisos**  
+   Ejecuta el siguiente comando para añadir el paquete de permisos de Spatie:
 
-1.2 `php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"`
+    ```bash
+    composer require spatie/laravel-permission
+    ```
 
-1.3 `php artisan migrate:fresh --seed`
+2. **Publicar el proveedor**  
+   Publica los archivos de configuración del paquete:
 
-1.4 `Migrations\ Permission`
+    ```bash
+    php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+    ```
 
-```sh
-    database\migrations
-    Linea 46
+3. **Ejecutar migraciones**  
+   Aplica las migraciones y si es necesario, inicializa los datos de ejemplo:
+
+    ```bash
+    php artisan migrate:fresh --seed
+    ```
+
+4. **Modificar las migraciones**  
+   Si necesitas habilitar el borrado suave, agrega la siguiente línea en la migración de permisos:
+
+    ```php
+    // En el archivo de migración correspondiente, línea 46
     $table->softDeletes();
-```
+    ```
 
-## Create Module
+## Crear el Módulo
 
-2.1 `php artisan module:make Administration`
+5. **Generar el módulo**  
+   Crea el módulo de administración con el siguiente comando:
 
-2.2 `php artisan storage:link`
+    ```bash
+    php artisan module:make Administration
+    ```
+
+6. **Crear enlace simbólico para almacenamiento**  
+   Si es necesario, ejecuta el siguiente comando para crear un enlace simbólico a la carpeta de almacenamiento:
+
+    ```bash
+    php artisan storage:link
+    ```

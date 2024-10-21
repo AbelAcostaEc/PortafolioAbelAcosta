@@ -1,0 +1,109 @@
+.markdownViewerResult {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 16px; // Tamaño de texto estándar base
+    color: #444;
+    background-color: #fefefe;
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        color: #444;
+    }
+
+    h1 {
+        font-size: 2rem; // 32px
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.75rem; // 28px
+    }
+
+    h3 {
+        font-size: 1.5rem; // 24px
+    }
+
+    h4 {
+        font-size: 1.25rem; // 20px
+    }
+
+    h5 {
+        font-size: 1.125rem; // 18px
+    }
+
+    h6 {
+        font-size: 1rem; // 16px
+    }
+
+    p {
+        font-size: 1rem; // 16px
+        margin: 0.5rem 0;
+        text-align: justify;
+    }
+
+    a {
+        font-size: 1rem; // 16px
+        color: #3498db;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+            color: #2980b9;
+        }
+    }
+
+    ul,
+    ol {
+        margin: 0.5rem 0 1rem 1.5rem;
+        font-size: 1rem; // 16px
+    }
+
+    li {
+        margin-bottom: 0.25rem;
+        padding-left: 1.2rem;
+        &::marker {
+            color: #3498db;
+            font-weight: bold;
+        }
+    }
+
+    blockquote {
+        font-size: 1rem; // 16px
+        margin: 1rem 0;
+        padding: 1rem;
+        background-color: #e9ecef;
+        border-left: 5px solid #2980b9;
+        font-style: italic;
+    }
+
+    code {
+        font-size: 0.95rem; // 15.2px
+        background-color: #f4f4f4;
+        padding: 0.2rem 0.4rem;
+        border-radius: 3px;
+        color: #c0392b;
+    }
+
+    pre {
+        font-size: 0.95rem; // 15.2px
+        background-color: #f4f4f4;
+        padding: 1rem;
+        border-radius: 5px;
+        overflow: auto;
+        border: 1px solid #ddd;
+        code {
+            background: none;
+            padding: 0;
+            white-space: pre-wrap;
+            color: #c0392b;
+        }
+    }
+}

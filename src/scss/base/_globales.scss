@@ -1,36 +1,48 @@
-@use 'variables' as v;
+@use "variables" as v;
+@use "mixins" as m;
 
 *,
 *:before,
 *:after {
-	box-sizing: inherit;
-	list-style: none;
-	box-sizing: border-box;
-	scroll-behavior: smooth;
-	transition: 0.3s ease-in-out;
+    box-sizing: inherit;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: 0.3s ease-in-out;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px for easier calculations
+    box-sizing: border-box;
+    height: 100%;
 }
 
 body {
-	font-family: v.$principal_font;
-	// font-size: 1.6rem;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: v.$primary-font;
+    // font-size: 1.6rem; // Base font size
+    margin: 0; // Remove default margin
 }
 
-body {
-	font-family: "Source Code Pro", monospace;
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
+    color: v.$black; // Optional: Add a default link color
+    transition: color 0.3s; // Smooth transition for link color
+
+    &:hover {
+        color: v.$blue; // Optional: Change color on hover
+    }
 }
 
 img {
-	max-width: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-	text-align: center;
+    max-width: 100%;
+    height: auto; // Maintain aspect ratio
 }

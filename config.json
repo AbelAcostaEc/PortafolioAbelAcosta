@@ -1,0 +1,6 @@
+{
+    "useBootstrap": false,
+    "useModernizr": true,
+    "sourceDir": "src",
+    "buildDir": "build"
+}

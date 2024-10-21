@@ -1,77 +1,130 @@
-laravel-modules# Laravel-Modules
+# Laravel-Modules
 
-## Create project laravel
+## Crear un proyecto Laravel
 
-1.1- `composer create-project laravel/laravel your-project-name 9.*`
+1. **Crear el proyecto**  
+   Ejecuta el siguiente comando para crear un nuevo proyecto Laravel:
 
-## Install laravel-modules
+    ```bash
+    composer create-project laravel/laravel your-project-name 9.*
+    ```
 
-2.1 `composer require nwidart/laravel-modules 9.*` 
+## Instalar laravel-modules
 
-2.2 `php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"`
+2. **Instalar el paquete**  
+   Añade el paquete de módulos:
 
-2.3 In `Composer.json` add line "Modules"
+    ```bash
+    composer require nwidart/laravel-modules 9.*
+    ```
 
-```bash
-{
-"autoload": {
-        "psr-4": {
-        "App\\": "app/",
-        "Modules\\": "Modules/"
+3. **Publicar el proveedor**  
+   Ejecuta el siguiente comando para publicar los archivos del proveedor:
+
+    ```bash
+    php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"
+    ```
+
+4. **Configurar `composer.json`**  
+   Añade la línea `"Modules"` en la sección `autoload` de tu archivo `composer.json`:
+
+    ```json
+    {
+        "autoload": {
+            "psr-4": {
+                "App\\": "app/",
+                "Modules\\": "Modules/"
+            }
         }
     }
-}
-```
+    ```
 
-2.4 `composer dump-autoload`
+5. **Actualizar el autoload**  
+   Ejecuta el siguiente comando para regenerar el autoload:
 
-## Install Livewire-modules
+    ```bash
+    composer dump-autoload
+    ```
 
-3.1 `composer require livewire/livewire`
+## Instalar Livewire-modules
 
-3.2 `composer require mhmiton/laravel-modules-livewire`
+6. **Instalar Livewire**  
+   Agrega el paquete de Livewire:
 
-3.3 `php artisan vendor:publish --tag=modules-livewire-config`
+    ```bash
+    composer require livewire/livewire
+    ```
 
-## Install dependencies Aditionals (optional)
+7. **Instalar el paquete de Livewire para módulos**  
+   Añade el paquete específico para Livewire y módulos:
 
-4.1 `composer require laravelcollective/html` /** Para Form **/
+    ```bash
+    composer require mhmiton/laravel-modules-livewire
+    ```
 
-## Create a module
+8. **Publicar la configuración de Livewire**  
+   Ejecuta el siguiente comando:
 
-4.1 `php artisan module:make module-name`
+    ```bash
+    php artisan vendor:publish --tag=modules-livewire-config
+    ```
 
-4.2 `php artisan module:make-livewire Pages/AboutPage Module`
+## Instalar dependencias adicionales (opcional)
 
-## Information Livewire
+9. **Instalar Laravel Collective**  
+   Si deseas usar formularios, ejecuta:
 
-### Route
+    ```bash
+    composer require laravelcollective/html
+    ```
 
-```sh
+## Crear un módulo
+
+10. **Crear un nuevo módulo**  
+    Ejecuta el siguiente comando para crear un módulo:
+
+    ```bash
+    php artisan module:make module-name
+    ```
+
+11. **Crear un módulo Livewire**  
+    Ejecuta el siguiente comando para crear un módulo Livewire:
+
+    ```bash
+    php artisan module:make-livewire Pages/AboutPage
+    ```
+
+## Información sobre Livewire
+
+### Rutas
+
+Configura las rutas para tu módulo:
+
+```php
 Route::prefix('inventory')->group(function() {
-
     Route::view('/', 'inventory::livewire.administration.product.index');
 });
 ```
 
-### Template Basic Livewire
+### Plantilla básica de Livewire
 
-`view/layouts/master.blade.php`
+Crea el archivo `view/layouts/master.blade.php` con el siguiente contenido:
 
-```sh
+```html
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>@yield('title')</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css"
+        />
         @livewireStyles
     </head>
     <body>
-        <div class="container mt-4">
-            @yield('content')
-        </div>
+        <div class="container mt-4">@yield('content')</div>
 
         @livewireScripts
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
@@ -79,18 +132,22 @@ Route::prefix('inventory')->group(function() {
 </html>
 ```
 
-### Add Component
+### Añadir componente Livewire
 
-```sh
+Para añadir un componente Livewire, utiliza el siguiente código:
+
+```blade
 @livewire('module::administration.product.product')
 ```
 
-##### template
+### Plantilla del módulo
 
-```sh
+Crea la plantilla del módulo con el siguiente contenido:
+
+```blade
 @extends('layouts.master')
 
-@section('title', 'title')
+@section('title', 'Título')
 
 @section('content')
     @livewire('module::administration.product.product')

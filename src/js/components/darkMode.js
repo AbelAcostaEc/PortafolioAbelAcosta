@@ -42,3 +42,9 @@ class DarkModeToggle {
 		document.body.classList.toggle("dark-mode", this.prefersDarkMode.matches);
 	}
 }
+
+/* try {
+	const darkModeToggle = new DarkModeToggle(".dark-mode-button");
+} catch (error) {
+	console.error("Error initializing DarkModeToggle:", error);
+} */

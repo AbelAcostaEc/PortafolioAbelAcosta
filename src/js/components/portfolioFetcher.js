@@ -59,3 +59,11 @@ class PortfolioFetcher {
 
 // Llamar al método fetchPortfolio con la ruta al archivo JSON de trabajos
 // myPortfolioFetcher.fetchPortfolio("build/assets/portfolio.json");
+
+
+/* try {
+	const myPortfolioFetcher = new PortfolioFetcher("container-jobs");
+	myPortfolioFetcher.fetchPortfolio("build/assets/portfolio.json");
+} catch (error) {
+	console.error("Error initializing PortfolioFetcher:", error);
+} */

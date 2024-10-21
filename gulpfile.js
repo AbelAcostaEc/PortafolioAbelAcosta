@@ -1,84 +1,138 @@
-// Importar los módulos de Gulp y sus plugins
-const { src, dest, watch, parallel } = require("gulp");
-const sass = require("gulp-sass")(require("sass"));
-const autoprefixer = require("autoprefixer");
-const postcss = require("gulp-postcss");
-const sourcemaps = require("gulp-sourcemaps");
-const cssnano = require("cssnano");
-const concat = require("gulp-concat");
-const terser = require("gulp-terser-js");
-const rename = require("gulp-rename");
-const imagemin = require("gulp-imagemin");
-const notify = require("gulp-notify");
-const cache = require("gulp-cache");
-const webp = require("gulp-webp");
+import path from "path";
+import fs from "fs";
+import { glob } from "glob";
+import { src, dest, watch, series } from "gulp";
+import * as dartSass from "sass";
+import gulpSass from "gulp-sass";
+import terser from "gulp-terser";
+import concat from "gulp-concat";
+import sharp from "sharp";
+import jsonfile from "jsonfile";
 
-// Definir rutas de los archivos
-const paths = {
-	scss: "src/scss/**/*.scss", // Ruta de los archivos Sass
-	css: "src/css/**/*.css", // Ruta de los archivos CSS
-	js: "src/js/**/*.js", // Ruta de los archivos JavaScript
-	imagenes: "src/img/**/*", // Ruta de los archivos de imágenes
+// Leer la configuración desde el archivo config.json
+let config;
+const defaultConfig = {
+    useBootstrap: false,
+    useModernizr: false,
+    sourceDir: "src",
+    buildDir: "public/build",
 };
 
-// Tarea para compilar y minificar estilos CSS
-function css() {
-	return src([paths.css, paths.scss]) // Usar un array para incluir ambas rutas
-		.pipe(sourcemaps.init()) // Iniciar generación de sourcemaps
-		.pipe(sass()) // Compilar Sass a CSS
-		.pipe(postcss([autoprefixer(), cssnano()])) // Aplicar autoprefijos y minificar CSS
-		.pipe(concat('app.css')) // Concatenar los archivos en uno solo
-		.pipe(sourcemaps.write(".")) // Escribir sourcemaps en el mismo directorio
-		.pipe(dest("build/css")); // Guardar archivos resultantes en 'build/css'
+try {
+    config = jsonfile.readFileSync("./config.json");
+} catch (err) {
+    console.error("Error reading config.json:", err);
+    config = {};
 }
 
-// Tarea para concatenar, minificar y generar sourcemaps de archivos JavaScript
-function javascript() {
-	return src(paths.js) // Tomar archivos JavaScript
-		.pipe(sourcemaps.init()) // Iniciar generación de sourcemaps
-		.pipe(concat("bundle.js")) // Concatenar todos los archivos en uno (bundle.js)
-		.pipe(terser()) // Minificar el JavaScript
-		.pipe(sourcemaps.write(".")) // Escribir sourcemaps en el mismo directorio
-		.pipe(rename({ suffix: ".min" })) // Renombrar el archivo minificado
-		.pipe(dest("./build/js")); // Guardar archivos resultantes en 'build/js'
+// Combina config con defaultConfig, usando defaultConfig como fallback
+config = { ...defaultConfig, ...config };
+
+// Inicializa Gulp con Dart Sass
+const sass = gulpSass(dartSass);
+
+// Define las rutas de las carpetas
+const srcDir = config.sourceDir; // Carpeta de entrada
+const buildDir = config.buildDir; // Carpeta de salida
+
+// Define las rutas para los archivos SCSS y JS
+const paths = {
+    scss: `${srcDir}/scss/**/*.scss`,
+    css: `${srcDir}/css/**/*.css`,
+    js: `${srcDir}/js/**/*.js`,
+    img: `${srcDir}/img/**/*.{png,jpg,jpeg,svg}`,
+};
+
+// Opciones de imagen
+const imageOptions = { quality: 80 };
+
+// Tarea para compilar SCSS a CSS
+export function css(done) {
+    // Inicializar la lista de estilos
+    let styles = [];
+
+    // Agregar archivos CSS y SCSS
+    styles.push(...glob.sync(paths.css)); // Agregar archivos CSS desde src/css
+    styles.push(...glob.sync(paths.scss)); // Agregar archivos SCSS desde src/scss
+
+    // Si Bootstrap está deshabilitado, lo removemos
+    if (!config.useBootstrap) {
+        // Filtrar el array para eliminar bootstrap.min.css si está presente
+        styles = styles.filter((style) => !style.includes("bootstrap.min.css"));
+    }
+
+    src(styles, { sourcemaps: true }) // Incluye tanto SCSS como CSS
+        .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+        .pipe(concat("app.min.css")) // Combina todos los CSS en app.min.css
+        .pipe(dest(`${buildDir}/css`, { sourcemaps: "." })); // Salida del CSS
+    done();
 }
 
-// Tarea para minificar imágenes
-function imagenes() {
-	return src(paths.imagenes) // Tomar archivos de imágenes
-		.pipe(cache(imagemin({ optimizationLevel: 3 }))) // Minificar las imágenes
-		.pipe(dest("build/img")) // Guardar imágenes minificadas en 'build/img'
-		.pipe(notify({ message: "Imagen Completada" })); // Notificar que la tarea de imágenes ha terminado
+// Tarea para minificar archivos JavaScript
+export function js(done) {
+    let scripts = [];
+    // Agregar archivos
+    scripts.push(...glob.sync(paths.js));
+    // Si Modernizr está deshabilitado, lo removemos
+    if (!config.useModernizr) {
+        // Filtrar el array para eliminar modernizr.js si está presente
+        scripts = scripts.filter((script) => !script.includes("modernizr.js"));
+    }
+    // Si Bootstrap está deshabilitado, lo removemos
+    if (!config.useBootstrap) {
+        // Filtrar el array para eliminar bootstrap.bundle.min.js si está presente
+        scripts = scripts.filter(
+            (script) => !script.includes("bootstrap.bundle.min.js")
+        );
+    }
+
+    src(scripts) // Escanea todos los archivos .js en todas las subcarpetas
+        .pipe(concat("app.min.js")) // Combina todos los archivos en app.min.js
+        .pipe(terser().on("error", (err) => console.error(err))) // Minifica el JavaScript
+        .pipe(dest(`${buildDir}/js`)); // Salida del JS
+    done();
 }
 
-// Tarea para generar versiones WebP de imágenes
-function versionWebp() {
-	return src(paths.imagenes) // Tomar archivos de imágenes
-		.pipe(webp()) // Generar versiones WebP de las imágenes
-		.pipe(dest("build/img")) // Guardar versiones WebP en 'build/img'
-		.pipe(notify({ message: "Versión WebP Completada" })); // Notificar que la tarea de WebP ha terminado
+// Tarea para procesar imágenes
+export async function images(done) {
+    const imageFiles = await glob(paths.img); // Obtiene todas las imágenes
+    await Promise.all(imageFiles.map((file) => processImage(file))); // Procesa imágenes en paralelo
+    done();
 }
 
-// Tarea para observar cambios en archivos y ejecutar tareas relacionadas
-function watchArchivos() {
-	watch([paths.scss, paths.css], css); // Observar cambios en archivos Sass y ejecutar la tarea 'css'
-	watch(paths.js, javascript); // Observar cambios en archivos JavaScript y ejecutar la tarea 'javascript'
-	watch(paths.imagenes, imagenes); // Observar cambios en archivos de imágenes y ejecutar la tarea 'imagenes'
-	watch(paths.imagenes, versionWebp); // Observar cambios en archivos de imágenes y ejecutar la tarea 'versionWebp'
+// Función para procesar cada imagen individualmente
+async function processImage(file) {
+    const relativePath = path.relative(srcDir + "/img", path.dirname(file));
+    const outputSubDir = path.join(buildDir, "img", relativePath);
+
+    // Crea el directorio de salida si no existe
+    fs.mkdirSync(outputSubDir, { recursive: true });
+
+    const baseName = path.basename(file, path.extname(file));
+    const extName = path.extname(file).toLowerCase();
+
+    if (extName === ".svg") {
+        const outputFile = path.join(outputSubDir, `${baseName}${extName}`);
+        fs.copyFileSync(file, outputFile);
+    } else {
+        const outputFile = path.join(outputSubDir, `${baseName}${extName}`);
+        const outputFileWebp = path.join(outputSubDir, `${baseName}.webp`);
+        const outputFileAvif = path.join(outputSubDir, `${baseName}.avif`);
+
+        // Procesa la imagen a diferentes formatos
+        await sharp(file).jpeg(imageOptions).toFile(outputFile);
+        await sharp(file).webp(imageOptions).toFile(outputFileWebp);
+        await sharp(file).avif({ quality: 80 }).toFile(outputFileAvif);
+    }
 }
 
-// Definir tarea por defecto que ejecuta todas las tareas en paralelo
-exports.default = parallel(
-	css,
-	javascript,
-	imagenes,
-	versionWebp,
-	watchArchivos
-);
+// Tarea de desarrollo que observa cambios en los archivos
+export function dev() {
+    watch(paths.scss, css);
+    watch(paths.css, css);
+    watch(paths.js, js);
+    watch(paths.img, images);
+}
 
-// Exportar tareas individuales para su ejecución por separado si es necesario
-exports.css = css;
-exports.javascript = javascript;
-exports.imagenes = imagenes;
-exports.versionWebp = versionWebp;
-exports.watchArchivos = watchArchivos;
+// Exporta la tarea por defecto que ejecuta todas las tareas
+export default series(js, css, images, dev);

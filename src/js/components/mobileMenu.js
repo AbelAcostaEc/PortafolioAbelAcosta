@@ -47,4 +47,8 @@ class MobileMenu {
 }
 
 // Crear una instancia de la clase MobileMenu con los selectores y ID correspondientes
-// const myMobileMenu = new MobileMenu("btn-mobile-menu", "i", ".menu");
+/* try {
+	const myMobileMenu = new MobileMenu("btn-mobile-menu", "i", ".menu");
+} catch (error) {
+	console.error("Error initializing MobileMenu:", error);
+} */

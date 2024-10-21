@@ -16,6 +16,9 @@ class TypeWriter {
 		this.currentIndex = 0;
 		this.currentLetterIndex = 0;
 		this.timer = null;
+		if(!this.element) {
+			throw new Error(`Elemento ${elementSelector} no encontrado`);
+		}
 
 		// Iniciar la animación de la máquina de escribir al crear una instancia de la clase
 		this.startTyping();
@@ -63,3 +66,9 @@ class TypeWriter {
 
 // Crear una instancia de la clase TypeWriter con un array de palabras, el ID del elemento y la velocidad
 //   const myTypeWriter = new TypeWriter(["Programador", "Desarrollador Web"], "typewriter", 200);
+
+/* try {
+	const myTypeWriter = new TypeWriter(["Programador", "Desarrollador Web"], "#typewriter", 200);
+} catch (error) {
+	console.error("Error initializing TypeWriter:", error);
+} */

@@ -73,3 +73,9 @@ class SectionChanger {
 
 // Crear una instancia de la clase SectionChanger con los selectores de pestañas y secciones
 // const mySectionChanger = new SectionChanger(".about-tabs", ".about-sections");
+
+/* try {
+	const mySectionChanger = new SectionChanger(".about-tabs", ".about-sections");
+} catch (error) {
+	console.error("Error initializing SectionChanger:", error);
+} */

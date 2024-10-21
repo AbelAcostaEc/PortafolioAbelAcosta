@@ -1,0 +1,44 @@
+@use "variables" as v;
+
+// Standard font sizes
+$font-size-h1: 4rem;
+$font-size-h2: 3.6rem;
+$font-size-h3: 3rem;
+$font-size-paragraph: 2rem;
+$font-size-small: 1.6rem; // For smaller text, e.g., captions or footnotes
+$font-size-xsmall: 1.4rem; // For very small text
+
+h1,
+h2,
+h3 {
+    font-family: v.$primary-font;
+    margin: 0 0 calc(v.$spacing-large / 2) 0;
+    font-weight: v.$font-black;
+    text-align: center;
+}
+
+p {
+    color: v.$white;
+    font-size: $font-size-paragraph;
+}
+
+.page-name {
+    text-align: center;
+    margin: v.$spacing-large 0;
+    font-weight: v.$font-bold;
+}
+
+.page-description {
+    text-align: center;
+}
+
+// Example of using standard sizes in a small text element
+.small-text {
+    font-size: $font-size-small;
+    color: v.$gray; // Optional: Using a gray color for small text
+}
+
+.xsmall-text {
+    font-size: $font-size-xsmall;
+    color: v.$gray; // Optional: Using a gray color for very small text
+}

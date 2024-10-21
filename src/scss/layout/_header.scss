@@ -30,7 +30,7 @@
         font-size: 30px;
         color: v.$white;
     }
-    @include m.mobile {
+    @include m.phone {
         display: none;
     }
 }
@@ -49,7 +49,7 @@
         pointer-events: all;
     }
 
-    @include m.mobile {
+    @include m.phone {
         flex-direction: row;
         align-items: center;
         position: relative;
@@ -62,7 +62,7 @@
 
     .item-menu {
         padding: 15px 15px;
-        @include m.mobile {
+        @include m.phone {
             padding: 15px 15px 5px;
         }
         a {
@@ -70,7 +70,7 @@
             color: v.$primary;
             border: 1px solid transparent;
 
-            @include m.mobile {
+            @include m.phone {
                 color: v.$white;
 
                 &:hover {
@@ -83,7 +83,7 @@
 
 .resume {
     @include m.grid(1, 10px);
-    @include m.mobile {
+    @include m.phone {
         @include m.grid(2, 10px);
     }
 
@@ -98,7 +98,7 @@
         text-align: center;
         img {
             width: 80vw;
-            @include m.mobile {
+            @include m.phone {
                 max-width: 400px;
             }
         }

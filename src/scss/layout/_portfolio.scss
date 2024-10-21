@@ -17,7 +17,7 @@
     padding: 10px;
     @include m.grid(1, 20px);
 
-    @include m.mobile {
+    @include m.phone {
         @include m.grid(2, 10px);
     }
     @include m.tablet {
@@ -72,12 +72,12 @@
     padding: 15px;
     @include m.grid(1, 10px);
 
-    @include m.mobile {
+    @include m.phone {
         @include m.grid(2, 10px);
     }
     .image {
         overflow: hidden;
-        @include m.mobile {
+        @include m.phone {
             max-height: 300px;
         }
     }

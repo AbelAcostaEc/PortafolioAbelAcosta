@@ -21,3 +21,11 @@ const preloader = (containerSelector) => {
 
 // Llamar a la función para ocultar el preloader con un selector específico
 // preloader("#preload");
+
+/* window.addEventListener("load", () => {
+    try {
+        preloader(".container-loader");
+    } catch (error) {
+        console.error("Error in preloader:", error);
+    }
+}); */

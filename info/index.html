@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>info</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Info</title>
+        <!-- Estilos -->
+        <link rel="stylesheet" href="../build/css/app.min.css" />
     </head>
     <body>
         <div class="container">
-            <a href="https://github.com/ASAA19971a/PortafolioAbelAcosta/blob/master/info/" class="btn btn-info">Repositorio</a>
-            <a href="/info/laravel-modules" class="btn btn-info">Laravel Modules</a>
-            <a href="/info/laravel" class="btn btn-info">Proyecto Laravel</a>
-            <a href="/info/vhost" class="btn btn-info">VHosts en Windows</a>
-            
-            
+            <div id="files-container">
+                <div class="folder-tree">
+                    <div class="folder folder--file">
+                        <a href="https://github.com/ASAA19971a/PortafolioAbelAcosta" target="_blank"> Repositorio </a>
+                    </div>
+                    <div class="folder folder--directory">
+                        Laravel
+                        <div class="folder folder--file" data-as-markdown data-as-url="laravel_clone.md" data-as-target="#markdown-container" data-as-active="true">Laravel Clone</div>
+
+                        <div class="folder folder--file" data-as-markdown data-as-url="laravel-modules.md" data-as-target="#markdown-container">Laravel Modules</div>
+                    </div>
+                    <div class="folder folder--file" data-as-markdown data-as-url="module-admin.md" data-as-target="#markdown-container">Module Administration</div>
+
+                    <div class="folder folder--file" data-as-markdown data-as-url="vhost.md" data-as-target="#markdown-container">Virtual Hosts</div>
+                    <div class="folder folder--file" data-as-markdown data-as-url="driverjs.md" data-as-target="#markdown-container">Driver js</div>
+                </div>
+                <div class="folder-preview">
+                    <div id="markdown-container"></div>
+                </div>
+            </div>
         </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+        <script src="../build/js/app.min.js"></script>
     </body>
 </html>
