@@ -15,7 +15,7 @@
     padding: 10px;
     border: 1px solid v.$gray;
     border-radius: 10px 0 0 10px;
-    max-height: 500px;
+    max-height: 100vh;
     overflow: auto;
     @include m.custom-scrollbar(v.$danger, v.$gray);
 
@@ -74,7 +74,7 @@
     padding: 20px;
     border: 1px solid v.$gray;
     border-radius: 0 10px 10px 0;
-    max-height: 500px;
+    max-height: 100vh;
     overflow: auto;
 
     @include m.custom-scrollbar(v.$primary, v.$gray);
