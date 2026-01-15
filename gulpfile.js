@@ -41,10 +41,18 @@ const paths = {
     css: `${srcDir}/css/**/*.css`,
     js: `${srcDir}/js/**/*.js`,
     img: `${srcDir}/img/**/*.{png,jpg,jpeg,svg}`,
+    content: `info/**/*.{md,html}`,
 };
 
 // Opciones de imagen
 const imageOptions = { quality: 80 };
+
+// Tarea para copiar contenido (Markdown/HTML)
+export function content(done) {
+    src(paths.content)
+        .pipe(dest(`${buildDir}/content`));
+    done();
+}
 
 // Tarea para compilar SCSS a CSS
 export function css(done) {
@@ -132,7 +140,8 @@ export function dev() {
     watch(paths.css, css);
     watch(paths.js, js);
     watch(paths.img, images);
+    watch(paths.content, content);
 }
 
 // Exporta la tarea por defecto que ejecuta todas las tareas
-export default series(js, css, images, dev);
+export default series(js, css, images, content, dev);

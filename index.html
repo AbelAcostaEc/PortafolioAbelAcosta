@@ -1,208 +1,255 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Abel Acosta</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abel Acosta | Desarrollador Full Stack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="build/css/app.min.css">
+    <meta name="description" content="Portafolio de Abel Acosta, Desarrollador Full Stack especializado en Laravel, Angular, y Automatización con N8N.">
+    <meta name="keywords" content="Abel Acosta, Desarrollador Full Stack, Web Developer, Laravel, Angular, N8N, PHP, JavaScript, Portfolio, Quito, Ecuador">
+    <meta name="author" content="Abel Acosta">
+    <meta name="robots" content="index, follow">
 
-        <!-- ETIQUETAS META -->
-        <meta name="author" content="Abel Acosta" />
-        <meta name="copyright" content="&copy ASAA 2023." />
-        <meta name="email" content="abel.2833@hotmail.com" />
-        <meta name="description" content="Portafolio de desarrollo web de Abel Acosta, con experiencia en HTML, CSS, JavaScript, y otras tecnologías web." />
-        <meta name="keywords" content="desarrollador web, HTML, CSS, JavaScript, experiencia, portafolio" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://abelacostaec.github.io/">
+    <meta property="og:title" content="Abel Acosta | Desarrollador Full Stack">
+    <meta property="og:description" content="Portafolio profesional de Abel Acosta. Desarrollo Web, Móvil y Automatización de Procesos.">
+    <meta property="og:image" content="build/img/foto_Abel.jpeg">
 
-        <!-- RESPONSIVIDAD -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=0" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://abelacostaec.github.io/">
+    <meta property="twitter:title" content="Abel Acosta | Desarrollador Full Stack">
+    <meta property="twitter:description" content="Portafolio profesional de Abel Acosta. Desarrollo Web, Móvil y Automatización de Procesos.">
+    <meta property="twitter:image" content="build/img/foto_Abel.jpeg">
 
-        <!-- SOCIAL CARDS FACEBOOK Y TWITTER-->
-        <meta property="og:title" content="Portafolio de Desarrollo Web - Abel Acosta" />
-        <meta property="og:description" content="Soy un programador recién graduado con conocimientos en HTML, CSS, JS, PHP, Java, Laravel y Livewire. Me encanta crear proyectos web innovadores y mejorar mis habilidades de programación." />
+    <link rel="icon" type="image/png" href="build/img/foto_Abel.jpeg">
+</head>
+<body>
 
-        <meta property="og:image" content="https://abelacostaportafolio.js.org/img/logo-Acosta.png" />
-        <meta property="og:url" content="https://abelacostaportafolio.js.org/" />
-        <meta property="og:type" content="website" />
-
-        <!-- Estilos -->
-        <link rel="stylesheet" href="build/css/app.min.css" />
-
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="build/img/logo-Acosta.ico" type="image/x-icon" />
-        <link rel="icon" href="build/img/logo-Acosta.ico" type="image/x-icon" />
-
-        <!-- Font Avesome CDN -->
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
-    </head>
-
-    <body>
-        <div class="container-loader">
-            <div class="loader"></div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Abel<span>.</span></a>
+            <div class="nav-links">
+                <a href="#about">Sobre Mí</a>
+                <a href="#experience">Experiencia</a>
+                <a href="#portfolio">Portafolio</a>
+                <a href="blog.html">Blog</a>
+                <a href="#contact">Contacto</a>
+            </div>
         </div>
-        <header class="header">
-            <nav class="nav">
-                <div class="logo">
-                    <img src="build/img/logo-Acosta.png" alt="Logo Abel Acosta (ASAA)" />
-                </div>
+    </nav>
 
-                <div class="mobile-menu">
-                    <button id="btn-mobile-menu">
-                        <i class="fa fa-bars"></i>
-                    </button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hola, soy <br><span>Abel Acosta</span></h1>
+                    <p>Técnologo en Análisis de Sistemas, Desarrollador Full Stack especializado en crear aplicaciones web y móviles funcionales, combinando código eficiente con una experiencia de usuario excepcional.</p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn btn-primary">Contáctame</a>
+                        <a href="#portfolio" class="btn btn-outline">Ver Proyectos</a>
+                    </div>
                 </div>
-
-                <ul class="menu">
-                    <!-- <a href="#home"><li>Incio</li></a> -->
-                    <li class="item-menu"><a href="#about">Sobre Mi</a></li>
-                    <li class="item-menu"><a href="#portfolio">Portafolio</a></li>
-                    <li class="item-menu"><a href="#contact">Contáctame</a></li>
-                </ul>
-            </nav>
-
-            <div class="resume">
-                <div class="description">
-                    <p>Hola, Mi nombre es:</p>
-                    <h1>Abel Acosta</h1>
-                    <p>Soy <span id="typewriter"></span></p>
-                </div>
-                <div class="img">
-                    <img src="build/img/img-abel.webp" alt="Abel Acosta foto" />
+                <div class="hero-img">
+                    <div class="img-wrapper">
+                        <!-- Placeholder if image missing, user needs to put foto_Abel.jpeg in src/img -->
+                        <img src="build/img/foto_Abel.jpeg" alt="Abel Acosta" onerror="this.src='https://ui-avatars.com/api/?name=Abel+Acosta&background=0D8ABC&color=fff&size=400'">
+                    </div>
                 </div>
             </div>
-        </header>
+        </div>
+    </section>
 
-        <section id="about">
-            <div class="about-tabs container">
-                <a href="#about-info" class="tab bg-sky-blue active">
-                    <i class="fa fa-user icon-tab"></i>
-                    <span class="text-tab">Sobre Mi</span>
-                </a>
-                <a href="#skills" class="tab bg-yellow">
-                    <i class="fa fa-graduation-cap icon-tab"></i>
-                    <span class="text-tab">Conocimientos</span>
-                </a>
-                <a href="#services" class="tab bg-green">
-                    <i class="fa fa-desktop icon-tab"></i>
-                    <span class="text-tab">Servicios</span>
-                </a>
-            </div>
-            <div class="about-container">
-                <div id="about-info" class="about-section bg-sky-blue active-section">
-                    <h3>Sobre Mí</h3>
-                    <br />
-                    <div class="description">
-                        <p>
-                            ¡Hola! Me llamo Abel Acosta y soy un desarrollador joven y apasionado con experiencia en tecnologías web, Me gradué en tecnología en sistemas y tengo 25 años. <br />
-                            Tengo Concocimientos en HTML, CSS, JS, PHP, Wordpress y también tengo experiencia en frameworks populares como Bootstrap, Laravel y Livewire. <br />
-                            Con una experiencia de dos meses en el desarrollo de sistemas, he tenido la oportunidad de aplicar mis conocimientos y habilidades en proyectos reales. Me encantaría ayudarte a crear una solución digital para tu negocio o proyecto, ¡no dudes en contactarme!
-                            <br /><br />
-                            <a class="btn-cv" href="build/assets/abelcv.pdf" download="Abel Acosta" target="_blank">Descargar CV</a>
-                        </p>
-                        <div class="image">
-                            <img src="build/img/developer.svg" alt="Imagen desarrollador Web" />
+    <!-- About & Skills -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre <span>Mí</span></h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <div class="card">
+                        <p>Soy un desarrollador apasionado por la tecnología y la innovación. Busco aportar soluciones prácticas utilizando tecnologías modernas como Laravel, Angular y herramientas de automatización como N8N.</p>
+                        <br>
+                        <p>Me enfoco en el liderazgo técnico, la comunicación efectiva y la resolución de problemas para entregar productos de alta calidad.</p>
+                        <br>
+                        <div class="languages">
+                            <strong>Idiomas:</strong>
+                            <ul>
+                                <li>Español (Nativo)</li>
+                                <li>Inglés (A2)</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="extra">
-                        <a class="btn-cv" href="build/assets/abelcv.pdf" download="Abel Acosta" target="_blank">Descargar CV</a>
+                </div>
+                <div class="skills-wrapper">
+                    <div class="skill-category">
+                        <h3>Backend & Database</h3>
+                        <div class="skill-tags">
+                            <span>PHP (Laravel)</span>
+                            <span>SQL (MySQL, PostgreSQL)</span>
+                            <span>NoSQL (MongoDB)</span>
+                            <span>N8N</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <div class="skill-tags">
+                            <span>Angular</span>
+                            <span>TypeScript</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Soft Skills</h3>
+                        <div class="skill-tags">
+                            <span>Liderazgo Técnico</span>
+                            <span>Comunicación Efectiva</span>
+                            <span>Resolución de Problemas</span>
+                            <span>Adaptabilidad</span>
+                        </div>
                     </div>
                 </div>
-                <div id="skills" class="about-section bg-yellow">
-                    <h3>Mis Conocimientos</h3>
-                    <br />
-                    <p>Soy habilidoso en tecnologías web como HTML, CSS, JavaScript, PHP, WordPress, Laravel, Livewire y Angular. He desarrollado soluciones digitales efectivas para empresas y proyectos diversos, garantizando una excelente experiencia para los usuarios finales.</p>
-                    <div class="icons">
-                        <i class="fa fa-html5"></i>
-                        <i class="fa fa-css3"></i>
-                        <i class="fab fa-js"></i>
-                        <i class="fa fa-wordpress"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Proyectos <span>Destacados</span></h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-commerce Platform</h3>
+                        <p>Plataforma de comercio electrónico completa con gestión de inventario, pagos y panel administrativo.</p>
+                        <div class="tech-stack">
+                            <span>Laravel</span>
+                            <span>MySQL</span>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>App Móvil Corporativa</h3>
+                        <p>Aplicación móvil para gestión interna de empleados y control de asistencia.</p>
+                        <div class="tech-stack">
+                            <span>Ionic</span>
+                            <span>Angular</span>
+                            <span>Firebase</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Automatización N8N</h3>
+                        <p>Flujos de trabajo automatizados para sincronización de datos entre CRM y ERP.</p>
+                        <div class="tech-stack">
+                            <span>N8N</span>
+                            <span>API REST</span>
+                            <span>JSON</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Mi <span>Experiencia</span></h2>
+            <div class="timeline">
+                <!-- Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="date">2023 - Actualidad</span>
+                        <h3>Desarrollador Full Stack</h3>
+                        <h4>GRAMEDIA</h4>
+                        <ul>
+                            <li>Desarrollo integral de aplicaciones web, móviles y de escritorio.</li>
+                            <li>Implementación de soluciones E-commerce y portales corporativos.</li>
+                            <li>Automatización de flujos con N8N.</li>
+                            <li>Gestión de bases de datos SQL y NoSQL.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="date">2021 - 2022</span>
+                        <h3>Desarrollador / QA (Pasantía)</h3>
+                        <h4>EASYSOFT S.A.</h4>
+                        <ul>
+                            <li>Desarrollo de módulos bajo estándares ISO.</li>
+                            <li>Gestión de pasos a producción.</li>
+                            <li>Documentación técnica y gestión de incidentes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contáctame</h2>
+            <div class="contact-content">
+                <p>¿Tienes un proyecto en mente o quieres colaborar? ¡Hablemos!</p>
+                <div class="contact-links">
+                    <a href="https://wa.me/593984906571" target="_blank">
+                        <i class="fab fa-whatsapp"></i> +593 98 490 6571
+                    </a>
+                    <a href="mailto:abel.2833@hotmail.com">
+                        <i class="fas fa-envelope"></i> abel.2833@hotmail.com
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-map-marker-alt"></i> Quito, Ecuador
+                    </a>
+                </div>
+                <div class="social-links" style="margin-top: 2rem; display: flex; justify-content: center; gap: 1.5rem;">
+                    <a href="https://github.com/AbelAcostaEc" target="_blank" style="color: var(--white); font-size: 1.5rem; transition: color 0.3s;">
                         <i class="fab fa-github"></i>
-                        <i class="fab fa-php"></i>
-                    </div>
-                </div>
-                <div id="services" class="about-section bg-green">
-                    <h3>Servicios</h3>
-                    <br />
-                    <div class="services-container">
-                        <div class="service">
-                            <i class="fa-5x fas fa-code"></i>
-                            <p class="title">Desarrollo web</p>
-                            <p class="description">Desarrollo de sitios web con diseños personalizados, adaptados a las necesidades de cada cliente y optimizados para la mejor experiencia del usuario.</p>
-                        </div>
-                        <div class="service">
-                            <i class="fa-5x fas fa-mobile"></i>
-                            <p class="title">Desarrollo de aplicaciones</p>
-                            <p class="description">Diseño y desarrollo de aplicaciones móviles y de escritorio para diferentes sistemas operativos. Puedo ayudarte a crear una aplicación que sea fácil de usar y atractiva para tus usuarios.</p>
-                        </div>
-                        <div class="service">
-                            <i class="fa-5x fas fa-lightbulb"></i>
-                            <p class="title">Consultoría tecnológica</p>
-                            <p class="description">Asesoramiento y recomendaciones sobre tecnología y herramientas que pueden ayudar a mejorar tu negocio o proyecto. Puedo ayudarte a elegir la mejor tecnología y herramientas para tus necesidades específicas.</p>
-                        </div>
-                        <div class="service">
-                            <i class="fa-5x fas fa-wrench"></i>
-                            <p class="title">Mantenimiento de equipos</p>
-                            <p class="description">Servicios de mantenimiento preventivo y correctivo para laptops, celulares y otros dispositivos electrónicos. Realizo diagnósticos y reparaciones para asegurarme de que tus dispositivos estén funcionando al máximo rendimiento.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="portfolio">
-            <div class="container">
-                <h2>Mi Portafolio</h2>
-                <div id="container-jobs"></div>
-                <!-- Modal -->
-                <div class="modal">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3 class="modal-title"></h3>
-                        </div>
-                        <div class="modal-body">
-                            <div class="image">
-                                <img class="modal-image" src="" alt="" />
-                            </div>
-                            <div class="details">
-                                <div class="description">
-                                    <h4>Descripción:</h4>
-                                    <p></p>
-                                </div>
-                                <div class="technologies">
-                                    <h4>Tecnologias Utilizadas:</h4>
-                                    <ul></ul>
-                                </div>
-                                <a target="_blank" class="btn-project"></a>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="close-btn">Cerrar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contact">
-            <div class="container">
-                <h2>Contactos</h2>
-                <p>Contáctame mediante mis redes sociales.</p>
-                <div class="social">
-                    <a href="https://www.facebook.com/people/ASAA-Soluciones-Informáticas/100086119248028/?sk=about" class="btn-social" style="background-color: #3b5998" target="_blank">
-                        <i class="fa fa-facebook-f"></i>
                     </a>
-                    <a href="http://wa.link/yvnz8v" class="btn-social" style="background-color: #25d366" target="_blank">
-                        <i class="fa fa-whatsapp"></i>
-                    </a>
-                    <a href="https://github.com/AbelAcostaEc" class="btn-social" style="background-color: #343434" target="_blank">
-                        <i class="fa fa-github"></i>
-                    </a>
-                    <a href="http://www.linkedin.com/in/abel-acosta-asaa" class="btn-social" style="background-color: #0077b5" target="_blank">
-                        <i class="fa fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/abel-acosta-asaa/" target="_blank" style="color: var(--white); font-size: 1.5rem; transition: color 0.3s;">
+                        <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer class="footer">
-            <p class="copy">&copy; 2023 Derechos Reservados Abel Acosta</p>
-        </footer>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Abel Acosta. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-        <script src="build/js/app.min.js"></script>
-    </body>
+    <script src="build/js/app.min.js"></script>
+</body>
 </html>

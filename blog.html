@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Abel Acosta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Highlight.js Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <meta name="description" content="Blog técnico de Abel Acosta. Artículos sobre Laravel, Ionic, N8N y desarrollo web.">
+    <meta name="keywords" content="Blog, Tutoriales, Laravel, Ionic, Desarrollo Web, Programación, Abel Acosta">
+    <meta name="author" content="Abel Acosta">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Blog | Abel Acosta">
+    <meta property="og:description" content="Artículos y notas técnicas sobre desarrollo web y móvil.">
+    <meta property="og:image" content="build/img/foto_Abel.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Blog | Abel Acosta">
+    <meta property="twitter:description" content="Artículos y notas técnicas sobre desarrollo web y móvil.">
+    <meta property="twitter:image" content="build/img/foto_Abel.jpeg">
+
+    <link rel="icon" type="image/png" href="build/img/foto_Abel.jpeg">
+    <link rel="stylesheet" href="build/css/app.min.css">
+    <style>
+        /* Blog Specific Styles */
+        .blog-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            margin-top: 100px;
+            margin-bottom: 50px;
+            min-height: 60vh;
+        }
+
+        .blog-sidebar {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            height: fit-content;
+        }
+
+        .blog-sidebar h3 {
+            color: var(--white);
+            font-family: var(--font-heading);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+        }
+
+        .article-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .article-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .article-list a:hover, .article-list a.active {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-color);
+        }
+
+        .blog-content {
+            background: rgba(30, 41, 59, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-color);
+        }
+
+        /* Markdown Content Styles */
+        .markdown-body h1, .markdown-body h2, .markdown-body h3 {
+            color: var(--white);
+            font-family: var(--font-heading);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .markdown-body h1 { font-size: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; }
+        .markdown-body h2 { font-size: 1.8rem; }
+        .markdown-body p { margin-bottom: 1rem; line-height: 1.7; color: var(--text-muted); }
+        .markdown-body ul, .markdown-body ol { margin-bottom: 1rem; padding-left: 2rem; color: var(--text-muted); }
+        .markdown-body li { margin-bottom: 0.5rem; }
+        .markdown-body code { background: rgba(0,0,0,0.3); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; color: #e2e8f0; }
+        .markdown-body pre { background: #1e1e1e; padding: 1rem; border-radius: 8px; overflow-x: auto; margin-bottom: 1.5rem; }
+        .markdown-body pre code { background: transparent; padding: 0; color: inherit; }
+        .markdown-body blockquote { border-left: 4px solid var(--accent-color); padding-left: 1rem; margin: 1rem 0; color: var(--text-muted); font-style: italic; }
+        .markdown-body img { max-width: 100%; border-radius: 8px; margin: 1rem 0; }
+
+        @media (max-width: 768px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+            .blog-sidebar {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Abel<span>.</span></a>
+            <div class="nav-links">
+                <a href="index.html#about">Sobre Mí</a>
+                <a href="index.html#experience">Experiencia</a>
+                <a href="index.html#portfolio">Portafolio</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="index.html#contact">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container blog-container">
+        <aside class="blog-sidebar">
+            <h3>Artículos</h3>
+            <ul class="article-list" id="articleList">
+                <!-- List will be populated by JS or manually -->
+                <li><a href="?post=laravel-modules">Laravel Modules</a></li>
+                <li><a href="?post=laravel_clone">Laravel Clone</a></li>
+                <li><a href="?post=module-admin">Module Administration</a></li>
+                <li><a href="?post=vhost">Virtual Hosts</a></li>
+                <li><a href="?post=driverjs">Driver JS</a></li>
+                <li><a href="?post=ionicV1">Ionic Manual V1</a></li>
+                <li><a href="?post=ionicV2">Ionic Manual V2</a></li>
+            </ul>
+        </aside>
+
+        <main class="blog-content">
+            <div id="markdown-content" class="markdown-body">
+                <!-- Content will be loaded here -->
+                <div style="text-align: center; padding: 2rem;">
+                    <i class="fas fa-book-open" style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                    <h2>Bienvenido a mi Blog</h2>
+                    <p>Selecciona un artículo de la lista para comenzar a leer.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Abel Acosta. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const post = urlParams.get('post');
+            const contentDiv = document.getElementById('markdown-content');
+            const links = document.querySelectorAll('.article-list a');
+
+            // Highlight active link
+            if (post) {
+                links.forEach(link => {
+                    if (link.getAttribute('href').includes(post)) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Fetch Markdown
+                fetch(`build/content/${post}.md`)
+                    .then(response => {
+                        if (!response.ok) throw new Error('Artículo no encontrado');
+                        return response.text();
+                    })
+                    .then(text => {
+                        // Remove Frontmatter (simple regex)
+                        const cleanText = text.replace(/^---[\s\S]*?---/, '');
+                        
+                        // Render Markdown
+                        contentDiv.innerHTML = marked.parse(cleanText);
+                        
+                        // Highlight Code
+                        hljs.highlightAll();
+                    })
+                    .catch(err => {
+                        contentDiv.innerHTML = `
+                            <div style="text-align: center; color: #ef4444;">
+                                <h2>Error</h2>
+                                <p>No se pudo cargar el artículo. Puede que no exista o haya sido movido.</p>
+                                <p style="font-size: 0.8rem; opacity: 0.7;">${err.message}</p>
+                            </div>
+                        `;
+                    });
+            }
+        });
+    </script>
+    <script src="build/js/app.min.js"></script>
+</body>
+</html>
