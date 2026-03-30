@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins';
+@use 'variables' as *;
+@use 'mixins' as *;
 
 // Header
 .navbar {
@@ -97,6 +97,7 @@
             span {
                 background: linear-gradient(to right, $accent-color, #60a5fa);
                 -webkit-background-clip: text;
+                background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
         }

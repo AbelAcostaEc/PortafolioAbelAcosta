@@ -1,6 +1,5 @@
-@import 'variables';
-@import 'mixins';
-@import 'base';
+@use 'variables' as *;
+@use 'mixins' as *;
 
 // Components
 .btn {
